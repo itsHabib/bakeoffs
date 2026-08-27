@@ -1,0 +1,10 @@
+{
+  "criterion": "files under a cmd/ directory",
+  "paths": [
+    "cmd/gate/main.go",
+    "cmd/flare/main.go",
+    "internal/run.go",
+    "cmd/console/serve.go",
+    "docs/cmd-notes.md"
+  ]
+}

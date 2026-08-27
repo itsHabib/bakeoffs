@@ -1,0 +1,123 @@
+{
+  "model": "qwen2.5:7b",
+  "results": {
+    "json-compact": {
+      "correct": 18,
+      "total": 20,
+      "misses": [
+        {
+          "payload": "org_chart",
+          "q": "How many direct reports does Theo Vance have?",
+          "expected": "3",
+          "got": "2"
+        },
+        {
+          "payload": "network_graph",
+          "q": "How many outgoing edges does the api node have?",
+          "expected": "3",
+          "got": "4"
+        }
+      ]
+    },
+    "json-pretty": {
+      "correct": 19,
+      "total": 20,
+      "misses": [
+        {
+          "payload": "network_graph",
+          "q": "How many outgoing edges does the api node have?",
+          "expected": "3",
+          "got": "4"
+        }
+      ]
+    },
+    "yaml": {
+      "correct": 19,
+      "total": 20,
+      "misses": [
+        {
+          "payload": "network_graph",
+          "q": "How many outgoing edges does the api node have?",
+          "expected": "3",
+          "got": "8"
+        }
+      ]
+    },
+    "csv": {
+      "correct": 10,
+      "total": 10,
+      "misses": []
+    },
+    "tsv": {
+      "correct": 10,
+      "total": 10,
+      "misses": []
+    },
+    "toon": {
+      "correct": 19,
+      "total": 20,
+      "misses": [
+        {
+          "payload": "network_graph",
+          "q": "How many outgoing edges does the api node have?",
+          "expected": "3",
+          "got": "4"
+        }
+      ]
+    },
+    "babel": {
+      "correct": 15,
+      "total": 20,
+      "misses": [
+        {
+          "payload": "flight_table",
+          "q": "Which flight departs from MEL?",
+          "expected": "QF 442",
+          "got": "qf_442"
+        },
+        {
+          "payload": "verify_report",
+          "q": "What is the detail of the unit-tests check?",
+          "expected": "2 of 314 failed",
+          "got": "fail 2_of_314_failed"
+        },
+        {
+          "payload": "org_chart",
+          "q": "Who does Suki Ito report to directly?",
+          "expected": "Theo Vance",
+          "got": "ceo"
+        },
+        {
+          "payload": "org_chart",
+          "q": "What is the name of the VP Revenue?",
+          "expected": "Dario Fuchs",
+          "got": "dario_fuchs"
+        },
+        {
+          "payload": "network_graph",
+          "q": "Does the web node point to auth? Answer yes or no.",
+          "expected": "yes",
+          "got": "no"
+        }
+      ]
+    },
+    "babel-nl": {
+      "correct": 18,
+      "total": 20,
+      "misses": [
+        {
+          "payload": "org_chart",
+          "q": "How many direct reports does Theo Vance have?",
+          "expected": "3",
+          "got": "2"
+        },
+        {
+          "payload": "network_graph",
+          "q": "Does the web node point to auth? Answer yes or no.",
+          "expected": "yes",
+          "got": "no"
+        }
+      ]
+    }
+  }
+}

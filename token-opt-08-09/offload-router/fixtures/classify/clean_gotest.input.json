@@ -1,0 +1,10 @@
+{
+  "labels": ["PASS", "FAIL", "SKIP"],
+  "lines": [
+    "ok  \tpkg/a\t0.102s",
+    "--- FAIL: TestX (0.00s)",
+    "--- SKIP: TestY (no gpu available)",
+    "ok  \tpkg/b\t0.211s"
+  ],
+  "planted": {"1": "FAIL", "2": "SKIP"}
+}

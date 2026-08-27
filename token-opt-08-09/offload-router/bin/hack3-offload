@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Thin launcher: run the CLI through the project venv so tiktoken is available.
+set -euo pipefail
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+py="$here/.venv/bin/python"
+if [[ ! -x "$py" ]]; then
+  py="python3"  # fall back to system python (token counts use heuristic)
+fi
+exec "$py" -m hack3_offload.cli "$@"

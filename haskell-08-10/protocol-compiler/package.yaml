@@ -1,0 +1,28 @@
+name: protocol-compiler
+version: 0.1.0.0
+github: itsHabib/bakeoff
+license: MIT
+
+ghc-options:
+  - -Wall
+  - -Werror
+
+dependencies:
+  - base >= 4.18 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  protocol-compiler:
+    main: Main.hs
+    source-dirs: app
+    dependencies:
+      - protocol-compiler
+
+tests:
+  protocol-compiler-test:
+    main: Spec.hs
+    source-dirs: test
+    dependencies:
+      - protocol-compiler

@@ -1,0 +1,29 @@
+name: provenance-datalog
+version: 0.1.0.0
+github: itsHabib/bakeoff
+license: MIT
+
+ghc-options:
+  - -Wall
+  - -Werror
+
+dependencies:
+  - base >= 4.18 && < 5
+  - containers
+
+library:
+  source-dirs: src
+
+executables:
+  provenance-datalog:
+    main: Main.hs
+    source-dirs: app
+    dependencies:
+      - provenance-datalog
+
+tests:
+  provenance-datalog-test:
+    main: Spec.hs
+    source-dirs: test
+    dependencies:
+      - provenance-datalog

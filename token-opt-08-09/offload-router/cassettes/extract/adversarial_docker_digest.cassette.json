@@ -1,0 +1,8 @@
+{
+  "name": "extract/adversarial_docker_digest",
+  "note": "The build output has no digest line. Asked for one anyway, the 7B model FABRICATED a plausible sha256 digest that never appears in the input. image and size_mb are real; only digest is invented. Both attempts invent it.",
+  "responses": [
+    "{\"image\": \"acme/api:latest\", \"digest\": \"sha256:deadbeefcafe0000feed\", \"size_mb\": 189}",
+    "{\"image\": \"acme/api:latest\", \"digest\": \"sha256:deadbeefcafe0000feed\", \"size_mb\": 189}"
+  ]
+}

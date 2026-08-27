@@ -1,0 +1,12 @@
+{
+  "criterion": "go test files",
+  "paths": [
+    "gate/gate.go",
+    "gate/gate_test.go",
+    "cmd/main.go",
+    "cmd/main_test.go",
+    "README.md",
+    "internal/ledger.go",
+    "internal/ledger_test.go"
+  ]
+}

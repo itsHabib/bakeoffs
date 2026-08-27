@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>READBACK — voice-gated ops</title>
+<style>
+  :root {
+    --bg: #0b0f14; --panel: #111721; --edge: #1f2a3a; --ink: #d7e1ee;
+    --dim: #7a8a9e; --amber: #ffb454; --green: #7fd88f; --red: #ff6b6b;
+    --blue: #6cb2ff; --accent: #ffd166;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--bg); color: var(--ink); height: 100vh; overflow: hidden;
+    font: 14px/1.45 "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+    display: flex; flex-direction: column;
+  }
+  header {
+    display: flex; align-items: center; gap: 14px; padding: 10px 16px;
+    border-bottom: 1px solid var(--edge); background: var(--panel);
+  }
+  header h1 { font-size: 16px; letter-spacing: 3px; color: var(--accent); }
+  header .tag { color: var(--dim); font-size: 12px; flex: 1; }
+  button {
+    font: inherit; color: var(--ink); background: #182233; cursor: pointer;
+    border: 1px solid var(--edge); border-radius: 6px; padding: 6px 12px;
+  }
+  button:hover { border-color: var(--blue); }
+  button:disabled { opacity: .4; cursor: default; }
+  button.primary { background: #23324a; border-color: var(--blue); }
+  button.live { background: #4a2323; border-color: var(--red); }
+  main { flex: 1; display: grid; grid-template-columns: 250px 1fr 380px; min-height: 0; }
+  .panel { border-right: 1px solid var(--edge); display: flex; flex-direction: column; min-height: 0; }
+  .panel:last-child { border-right: none; }
+  .panel h2 {
+    font-size: 11px; letter-spacing: 2px; color: var(--dim); padding: 10px 14px 6px;
+    border-bottom: 1px solid var(--edge);
+  }
+  .scroll { overflow-y: auto; flex: 1; padding: 10px 14px; }
+
+  /* world */
+  .wgroup { margin-bottom: 14px; }
+  .wgroup h3 { font-size: 11px; color: var(--dim); margin-bottom: 6px; letter-spacing: 1px; }
+  .wrow { display: flex; align-items: baseline; gap: 8px; padding: 3px 0; flex-wrap: wrap; }
+  .wname { color: var(--ink); }
+  .chip {
+    font-size: 12px; padding: 0 7px; border-radius: 10px; border: 1px solid var(--edge);
+    color: var(--blue);
+  }
+  .chip.merged { color: var(--dim); border-style: dashed; }
+  .pill { font-size: 11px; padding: 0 8px; border-radius: 10px; }
+  .pill.on { background: #16331d; color: var(--green); }
+  .pill.off { background: #241a1a; color: var(--dim); }
+  .ver { font-size: 12px; color: var(--dim); }
+  .ver b { color: var(--ink); font-weight: normal; }
+  .flash { animation: flash 1.2s ease-out; }
+  @keyframes flash { 0% { background: #2a3a26; } 100% { background: transparent; } }
+
+  /* console */
+  #transcript { flex: 1; overflow-y: auto; padding: 14px; }
+  .line { margin-bottom: 10px; max-width: 92%; }
+  .line .who { font-size: 10px; letter-spacing: 2px; color: var(--dim); }
+  .line.you .who { color: var(--blue); }
+  .line.sys .who { color: var(--accent); }
+  .line.you { margin-left: auto; text-align: right; }
+  .line .txt { display: inline-block; padding: 6px 10px; border-radius: 8px; background: #141d2b; margin-top: 2px; text-align: left; }
+  .line.sys .txt { background: #1a2130; border-left: 3px solid var(--accent); }
+  .line.note .txt { background: #2b2113; color: var(--amber); border-left: 3px solid var(--amber); font-size: 12px; }
+  .line.mishear .txt { background: #2b1616; color: var(--red); border-left: 3px solid var(--red); }
+
+  /* armed card */
+  #card {
+    margin: 0 14px 10px; border: 1px solid var(--amber); border-radius: 10px;
+    background: #1a1710; padding: 12px 14px; display: none;
+  }
+  #card .head { display: flex; justify-content: space-between; align-items: baseline; }
+  #card .canon { color: var(--amber); font-size: 15px; }
+  #card .state { font-size: 10px; letter-spacing: 2px; color: var(--amber); }
+  #card .fields { display: flex; gap: 16px; margin: 8px 0; flex-wrap: wrap; }
+  #card .f label { display: block; font-size: 10px; color: var(--dim); letter-spacing: 1px; }
+  #card .f div { color: var(--ink); }
+  #card .say { margin-top: 4px; font-size: 13px; }
+  #card .say b { color: var(--green); font-weight: normal; }
+  #card .say i { color: var(--red); font-style: normal; }
+  #bar { height: 3px; background: #33270f; border-radius: 2px; margin-top: 10px; overflow: hidden; }
+  #barfill { height: 100%; background: var(--amber); width: 100%; transition: width .25s linear; }
+
+  /* input */
+  #inputrow { display: flex; gap: 8px; padding: 0 14px 14px; }
+  #say {
+    flex: 1; font: inherit; color: var(--ink); background: #0e1520;
+    border: 1px solid var(--edge); border-radius: 6px; padding: 8px 12px;
+  }
+  #say:focus { outline: none; border-color: var(--blue); }
+
+  /* audit */
+  #audit { font-size: 12px; }
+  .a { padding: 6px 0; border-bottom: 1px dashed #1a2333; }
+  .a .top { display: flex; gap: 8px; align-items: baseline; }
+  .a .t { color: var(--dim); font-size: 11px; }
+  .badge { font-size: 10px; letter-spacing: 1px; padding: 0 6px; border-radius: 3px; }
+  .b-order { background: #1c2a1e; color: var(--green); }
+  .b-readback { background: #1c2a1e; color: var(--green); }
+  .b-executed { background: #14331d; color: var(--green); }
+  .b-confirm { background: #14331d; color: var(--green); }
+  .b-negative { background: #33251a; color: var(--amber); }
+  .b-mismatch, .b-reject { background: #331717; color: var(--red); }
+  .b-clarify, .b-held, .b-stale, .b-expired { background: #2b2113; color: var(--amber); }
+  .a .heard { color: var(--blue); }
+  .a .detail { color: var(--dim); word-break: break-word; }
+  .pulse { animation: pulse 1.5s ease-in-out 2; }
+  @keyframes pulse { 50% { box-shadow: inset 0 0 0 2px var(--accent); } }
+</style>
+</head>
+<body>
+<header>
+  <h1>READBACK</h1>
+  <div class="tag">order → readback → confirm → execute · nothing runs unconfirmed</div>
+  <button id="demo" class="primary">▶ canned demo (no mic)</button>
+  <button id="mic">🎤 speak</button>
+  <button id="mute" title="toggle voice output">🔊 voice on</button>
+  <button id="reset" title="restore seed world, clear audit">↺ reset</button>
+</header>
+<main>
+  <section class="panel">
+    <h2>WORLD</h2>
+    <div class="scroll" id="world"></div>
+  </section>
+  <section class="panel" id="console">
+    <h2>CONSOLE</h2>
+    <div id="transcript"></div>
+    <div id="card">
+      <div class="head"><span class="canon" id="canon"></span><span class="state">ARMED — AWAITING CONFIRM</span></div>
+      <div class="fields" id="fields"></div>
+      <div class="say">say <b id="confirmphrase"></b> to execute · <i>“negative”</i> to cancel</div>
+      <div id="bar"><div id="barfill"></div></div>
+    </div>
+    <div id="inputrow">
+      <input id="say" placeholder='type an order… e.g. "merge roxiq pr 14", then "confirm one four"' autocomplete="off">
+      <button id="send">send</button>
+    </div>
+  </section>
+  <section class="panel" id="auditpanel">
+    <h2>AUDIT TRAIL</h2>
+    <div class="scroll" id="audit"></div>
+  </section>
+</main>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const DIGITS = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+const spokenDigits = n => String(n).split("").map(d => DIGITS[d]).join(" ");
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+let state = null;
+let auditSeen = 0;
+let voiceOn = true;
+let running = false;
+
+// ---- speech out ----------------------------------------------------------
+function speak(text) {
+  if (!voiceOn || !window.speechSynthesis) return sleep(Math.min(200 + text.length * 45, 6000));
+  return new Promise(resolve => {
+    const u = new SpeechSynthesisUtterance(text);
+    u.rate = 1.02;
+    const fallback = setTimeout(resolve, 1500 + text.length * 90);
+    u.onend = u.onerror = () => { clearTimeout(fallback); resolve(); };
+    speechSynthesis.speak(u);
+  });
+}
+
+// ---- rendering -----------------------------------------------------------
+function esc(s) { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+function addLine(kind, who, text) {
+  const el = document.createElement("div");
+  el.className = "line " + kind;
+  el.innerHTML = `<span class="who">${who}</span><br><span class="txt">${esc(text)}</span>`;
+  $("transcript").appendChild(el);
+  $("transcript").scrollTop = $("transcript").scrollHeight;
+}
+
+function renderWorld(w) {
+  const repo = r => `<div class="wrow"><span class="wname">${esc(r.name)}</span>` +
+    r.open_prs.map(n => `<span class="chip">#${n}</span>`).join("") +
+    `<span class="chip merged">${r.merged.length} merged</span></div>`;
+  const svc = s => `<div class="wrow"><span class="wname">${esc(s.name)}</span>` +
+    `<span class="ver">stg <b>${esc(s.versions.staging || "—")}</b> · prod <b>${esc(s.versions.production || "—")}</b></span></div>`;
+  const flag = f => `<div class="wrow"><span class="wname">${esc(f.name)}</span>` +
+    `<span class="pill ${f.on ? "on" : "off"}">${f.on ? "ON" : "off"}</span></div>`;
+  $("world").innerHTML =
+    `<div class="wgroup"><h3>REPOS · open PRs</h3>${w.repos.map(repo).join("")}</div>` +
+    `<div class="wgroup"><h3>SERVICES</h3>${w.services.map(svc).join("")}</div>` +
+    `<div class="wgroup"><h3>FLAGS</h3>${w.flags.map(flag).join("")}</div>`;
+}
+
+function renderCard(p) {
+  if (!p) { $("card").style.display = "none"; return; }
+  $("card").style.display = "block";
+  $("canon").textContent = p.canonical;
+  $("fields").innerHTML = p.fields.map(([k, v]) =>
+    `<div class="f"><label>${esc(k.toUpperCase())}</label><div>${esc(v)}</div></div>`).join("");
+  $("confirmphrase").textContent = `“confirm ${p.token_spoken}”`;
+}
+
+function renderAudit(audit) {
+  const el = $("audit");
+  el.innerHTML = audit.map(e => {
+    const t = new Date(e.ts).toLocaleTimeString([], { hour12: false });
+    return `<div class="a"><div class="top"><span class="t">${t}</span>` +
+      `<span class="badge b-${esc(e.event)}">${esc(e.event.toUpperCase())}</span>` +
+      (e.heard ? `<span class="heard">“${esc(e.heard)}”</span>` : "") +
+      `</div><div class="detail">${esc(e.detail)}</div></div>`;
+  }).join("");
+  el.scrollTop = el.scrollHeight;
+}
+
+function render(s) {
+  state = s;
+  renderWorld(s.world);
+  renderCard(s.pending);
+  renderAudit(s.audit || []);
+}
+
+// countdown bar
+setInterval(() => {
+  if (!state || !state.pending) return;
+  const left = (new Date(state.pending.deadline) - Date.now()) / 1000;
+  const pct = Math.max(0, Math.min(1, left / state.pending.ttl_seconds));
+  $("barfill").style.width = (pct * 100) + "%";
+}, 250);
+
+// ---- talking to the gate -------------------------------------------------
+async function hear(text) {
+  const res = await fetch("/api/hear", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text })
+  });
+  const { reply, state: s } = await res.json();
+  auditSeen = (s.audit || []).length;
+  render(s);
+  addLine("sys", "READBACK", reply.say);
+  return reply;
+}
+
+async function sendUtterance(text, { speakReply = true } = {}) {
+  if (!text.trim()) return;
+  addLine("you", "YOU", text);
+  const reply = await hear(text);
+  if (speakReply) await speak(reply.say);
+  return reply;
+}
+
+// poll: keeps world/card fresh and voices expiries that happen with no input
+setInterval(async () => {
+  if (running) return;
+  const s = await (await fetch("/api/state")).json();
+  const audit = s.audit || [];
+  const fresh = audit.slice(auditSeen);
+  auditSeen = audit.length;
+  render(s);
+  for (const e of fresh) {
+    if (e.event !== "expired") continue;
+    addLine("sys", "READBACK", "order expired. nothing executed.");
+    speak("order expired. nothing executed.");
+  }
+}, 1000);
+
+// ---- manual input --------------------------------------------------------
+$("send").onclick = () => { const v = $("say").value; $("say").value = ""; sendUtterance(v); };
+$("say").addEventListener("keydown", e => { if (e.key === "Enter") $("send").onclick(); });
+$("mute").onclick = () => {
+  voiceOn = !voiceOn;
+  if (!voiceOn && window.speechSynthesis) speechSynthesis.cancel();
+  $("mute").textContent = voiceOn ? "🔊 voice on" : "🔇 muted";
+};
+$("reset").onclick = async () => {
+  const s = await (await fetch("/api/reset", { method: "POST" })).json();
+  auditSeen = 0;
+  $("transcript").innerHTML = "";
+  render(s);
+  addLine("note", "NOTE", "world reset to seed. audit cleared.");
+};
+
+// ---- mic (Web Speech; optional — everything works typed) -----------------
+const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+let rec = null, listening = false;
+if (!Rec) { $("mic").disabled = true; $("mic").title = "Web Speech not available in this browser — type instead"; }
+$("mic").onclick = () => {
+  if (listening) { rec.stop(); return; }
+  rec = new Rec();
+  rec.lang = "en-US";
+  rec.interimResults = false;
+  rec.onresult = e => sendUtterance(e.results[0][0].transcript);
+  rec.onend = () => { listening = false; $("mic").textContent = "🎤 speak"; $("mic").classList.remove("live"); };
+  rec.onerror = rec.onend;
+  listening = true;
+  $("mic").textContent = "● listening…";
+  $("mic").classList.add("live");
+  rec.start();
+};
+
+// ---- canned demo: the judge's no-mic path --------------------------------
+// Each step is fed through the SAME /api/hear path as live speech. "heard"
+// is what the mic delivered; when it differs from "intended", that's the
+// scripted mishear.
+const SCRIPT = [
+  { note: "SCENE 1 — a clean order, spoken, read back, confirmed." },
+  { intended: "deploy checkout to production" },
+  { confirm: true },
+  { note: "SCENE 2 — the operator says “merge roxiq PR fourteen”. The mic mishears." },
+  { intended: "merge roxiq PR fourteen", heard: "merge roxiq pr forty" },
+  { note: "the readback says FOUR ZERO — not what was said. So:" },
+  { intended: "negative" },
+  { note: "nothing executed. the mishear cost nothing. that is the whole product." },
+  { note: "SCENE 3 — an ambiguous order. Two roxiq PRs are open; it must not guess." },
+  { intended: "merge roxiq" },
+  { intended: "merge roxiq PR fourteen" },
+  { confirm: true },
+  { note: "done — read the audit trail on the right: heard → parsed → readback → confirm → effect." },
+];
+
+$("demo").onclick = async () => {
+  if (running) return;
+  running = true;
+  $("demo").disabled = true; $("say").disabled = true; $("send").disabled = true;
+  try {
+    const s = await (await fetch("/api/reset", { method: "POST" })).json();
+    auditSeen = 0; $("transcript").innerHTML = ""; render(s);
+    for (const step of SCRIPT) {
+      if (step.note) { addLine("note", "DEMO", step.note); await sleep(1400); continue; }
+      let text = step.intended;
+      if (step.confirm) {
+        if (!state.pending) continue;
+        text = "confirm " + state.pending.token_spoken;
+      }
+      const heard = step.heard || text;
+      addLine("you", "YOU SAY", text);
+      if (step.heard && step.heard !== text) {
+        await sleep(500);
+        addLine("mishear", "MIC HEARD", heard);
+      }
+      await sleep(500);
+      const reply = await hear(heard);
+      await speak(reply.say);
+      await sleep(600);
+    }
+    $("auditpanel").classList.add("pulse");
+    setTimeout(() => $("auditpanel").classList.remove("pulse"), 3200);
+  } finally {
+    running = false;
+    $("demo").disabled = false; $("say").disabled = false; $("send").disabled = false;
+  }
+};
+
+// ---- boot ----------------------------------------------------------------
+(async () => {
+  const s = await (await fetch("/api/state")).json();
+  auditSeen = (s.audit || []).length;
+  render(s);
+  addLine("note", "NOTE", "type an order, hit 🎤 to speak one, or run the canned demo. nothing executes without a confirmed readback.");
+})();
+</script>
+</body>
+</html>

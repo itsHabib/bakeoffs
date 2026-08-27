@@ -1,0 +1,28 @@
+name: bidirectional-artifacts
+version: 0.1.0.0
+github: itsHabib/bakeoff
+license: MIT
+
+ghc-options:
+  - -Wall
+  - -Werror
+
+dependencies:
+  - base >= 4.18 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  bidirectional-artifacts:
+    main: Main.hs
+    source-dirs: app
+    dependencies:
+      - bidirectional-artifacts
+
+tests:
+  bidirectional-artifacts-test:
+    main: Spec.hs
+    source-dirs: test
+    dependencies:
+      - bidirectional-artifacts

@@ -1,0 +1,8 @@
+{
+  "name": "narrow/adversarial_cmd_dir",
+  "note": "7B model matched the substring 'cmd' naively and swept in docs/cmd-notes.md, which lives in docs/, not under a cmd/ directory. Both attempts repeat the error.",
+  "responses": [
+    "{\"matched\": [\"cmd/gate/main.go\", \"cmd/flare/main.go\", \"cmd/console/serve.go\", \"docs/cmd-notes.md\"]}",
+    "{\"matched\": [\"cmd/gate/main.go\", \"cmd/flare/main.go\", \"cmd/console/serve.go\", \"docs/cmd-notes.md\"]}"
+  ]
+}

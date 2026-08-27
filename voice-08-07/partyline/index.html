@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>partyline — fleet brevity channel</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="dot" id="txdot"></span>
+    <h1>PARTYLINE</h1>
+    <span class="sub">fleet brevity channel</span>
+  </div>
+  <div class="controls">
+    <select id="scenario" title="Scenario">
+      <option value="highlight">Highlight · 45 s</option>
+      <option value="full">Full run · ~3.5 min</option>
+    </select>
+    <div class="seg" id="modeseg" role="group" aria-label="Phrase mode">
+      <button data-mode="brevity" class="on">Brevity</button>
+      <button data-mode="prose">Prose</button>
+    </div>
+    <button id="play" class="play">▶ Open channel</button>
+    <span class="clock" id="clock">0:00</span>
+  </div>
+</header>
+
+<main>
+  <section class="left">
+    <h2>Fleet board <span class="hint">— ground truth; your ears should already know this</span></h2>
+    <div id="board" class="board"></div>
+    <div class="stats" id="stats">
+      <span>on air <b id="s-tx">0</b></span>
+      <span>coalesced <b id="s-co">0</b></span>
+      <span>dropped <b id="s-dr">0</b></span>
+      <span>queued <b id="s-q">0</b></span>
+    </div>
+  </section>
+  <section class="right">
+    <div class="txbar"><span class="txlabel">TX</span> <span id="txwho">— channel quiet —</span></div>
+    <div id="transcript" class="transcript" aria-live="off"></div>
+  </section>
+</main>
+
+<footer>
+  output-only demo · no mic · no model · sim + grammar + priority policy are tested pure code — audio is the only browser part
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hack-tutor</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <h1>hack-tutor</h1>
+    <p>a tutor allowed <span id="allowance">3 interruptions</span> per session — and a report of everything it held back</p>
+  </div>
+  <div class="budget">
+    <div class="pips" id="pips"></div>
+    <div class="budget-meta"><span id="budgetLabel">3 left</span><span id="resetLabel"></span></div>
+  </div>
+</header>
+
+<main>
+  <section class="panel chart-panel">
+    <div class="panel-head">
+      <h2>Interruption pressure</h2>
+      <div class="legend">
+        <span class="key pressure">pressure</span>
+        <span class="key bar">the bar</span>
+        <span class="key floor">floor</span>
+      </div>
+    </div>
+    <canvas id="chart"></canvas>
+    <div class="readout">
+      <div class="stat"><b id="pressureValue">0</b><small>pressure</small></div>
+      <div class="stat"><b id="thresholdValue">56</b><small>the bar</small></div>
+      <div class="stat wide"><b id="verdictLine" class="verdict">listening</b><small id="modelLine">—</small></div>
+      <div class="stat"><b id="thinkingDot" class="dot">idle</b><small>classifier</small></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Student, working out loud</h2><button id="resetBtn" class="ghost">reset session</button></div>
+    <div id="transcript" class="scroll transcript"></div>
+    <form id="typeForm" class="type">
+      <input id="typeInput" placeholder="type a line of working and press enter…" autocomplete="off">
+    </form>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Spent &amp; held</h2><button id="reportBtn" class="ghost">end session → report</button></div>
+    <div id="log" class="scroll log">
+      <p class="empty">Nothing yet. Silence is the default — that's the pedagogy.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <button id="micBtn" class="primary">🎙 Start listening</button>
+  <span class="rehearse-group">
+    <button id="rehearseA" class="secondary">▶ Misconception</button>
+    <button id="rehearseB" class="secondary">▶ Self-caught slip</button>
+    <button id="rehearseC" class="secondary">▶ Stuck</button>
+  </span>
+  <label class="mute"><input type="checkbox" id="speakOut" checked> speak out loud</label>
+  <span id="status" class="status"></span>
+</footer>
+
+<div id="report" class="report-overlay" hidden>
+  <div class="report-sheet">
+    <div class="report-head">
+      <div>
+        <h2 class="report-title">Session report</h2>
+        <p id="reportSub" class="report-sub"></p>
+      </div>
+      <button id="reportClose" class="ghost">close</button>
+    </div>
+    <div id="reportBody" class="report-body"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

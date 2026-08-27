@@ -1,0 +1,20 @@
+{
+  "schema_version": "agent-substrate-bakeoff-envelope/v1",
+  "entry": "hack-branchroom",
+  "case_id": "exact-head-lifecycle-v1/late-parent-terminal",
+  "input_bundle_digest": "sha256:ec742e0129e44d0529bbf5051125b33cfa6bea3c665463062c5da0f1f8947402",
+  "exact_subject": {
+    "task_id": "task-17",
+    "task_revision": 4,
+    "repository": "example/agent-substrate",
+    "base_sha": "2222222222222222222222222222222222222222",
+    "head_sha": "3333333333333333333333333333333333333333",
+    "diff_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "native_status": "causal_separation_enforced",
+  "reason_codes": [
+    "own_terminal_correlated",
+    "parent_epoch_terminal"
+  ],
+  "native_artifact_digest": "sha256:8799a74967718324cd29dfb4a7048da219afe5ad3da3631604882992b80d261d"
+}

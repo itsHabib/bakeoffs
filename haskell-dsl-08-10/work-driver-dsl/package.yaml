@@ -1,0 +1,20 @@
+name: work-driver-dsl
+version: 0.1.0.0
+github: itsHabib/bakeoff
+license: MIT
+ghc-options: [-Wall, -Werror]
+dependencies:
+  - base >= 4.18 && < 5
+  - containers
+library:
+  source-dirs: src
+executables:
+  work-driver-dsl:
+    main: Main.hs
+    source-dirs: app
+    dependencies: [work-driver-dsl]
+tests:
+  work-driver-dsl-test:
+    main: Spec.hs
+    source-dirs: test
+    dependencies: [work-driver-dsl]

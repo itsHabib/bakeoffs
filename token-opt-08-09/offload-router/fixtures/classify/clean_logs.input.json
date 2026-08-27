@@ -1,0 +1,11 @@
+{
+  "labels": ["ERROR", "WARN", "INFO"],
+  "lines": [
+    "INFO server started on :8080",
+    "WARN deprecated flag --old used",
+    "ERROR failed to connect to db: timeout",
+    "INFO request handled in 12ms",
+    "ERROR panic: nil pointer dereference"
+  ],
+  "planted": {"0": "INFO", "2": "ERROR"}
+}

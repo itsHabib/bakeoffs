@@ -1,0 +1,8 @@
+{
+  "schema": {
+    "module": "string",
+    "go_version": "string",
+    "fail_count": "int"
+  },
+  "text": "go: downloading example.com/x v1.4.2\n=== RUN   TestFoo\n--- FAIL: TestBar (0.01s)\n    widget_test.go:42: want 3, got 4\nFAIL\nexit status 1\nFAIL\tgithub.com/acme/widget\t0.312s\ngo version go1.22.3 darwin/arm64\n2 tests failed"
+}

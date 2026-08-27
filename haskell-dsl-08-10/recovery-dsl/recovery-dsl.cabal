@@ -1,0 +1,54 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.39.6.
+--
+-- see: https://github.com/sol/hpack
+
+name:           recovery-dsl
+version:        0.1.0.0
+homepage:       https://github.com/itsHabib/bakeoff#readme
+bug-reports:    https://github.com/itsHabib/bakeoff/issues
+license:        MIT
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/itsHabib/bakeoff
+
+library
+  exposed-modules:
+      Example
+      Recovery
+  other-modules:
+      Paths_recovery_dsl
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Werror
+  build-depends:
+      base >=4.18 && <5
+  default-language: Haskell2010
+
+executable recovery-dsl
+  main-is: Main.hs
+  other-modules:
+      Paths_recovery_dsl
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Werror
+  build-depends:
+      base >=4.18 && <5
+    , recovery-dsl
+  default-language: Haskell2010
+
+test-suite recovery-dsl-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_recovery_dsl
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Werror
+  build-depends:
+      base >=4.18 && <5
+    , recovery-dsl
+  default-language: Haskell2010

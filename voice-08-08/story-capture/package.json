@@ -1,0 +1,15 @@
+{
+  "name": "hack2-story-capture",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A voice interviewer that turns one family story into a provenance-safe chapter.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/story-core.test.js test/realtime-config.test.js",
+    "check": "node --check server.js && node --check public/app.js && node --test test/story-core.test.js test/realtime-config.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

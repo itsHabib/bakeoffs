@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+.hack3-ledger.jsonl
+.hack3-demo-ledger.jsonl
+hack3-demo-*.jsonl

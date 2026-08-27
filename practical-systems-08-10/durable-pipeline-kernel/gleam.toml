@@ -1,0 +1,11 @@
+name = "durable_pipeline_kernel"
+version = "0.1.0"
+gleam = ">= 1.18.1 and < 1.19.0"
+target = "erlang"
+
+[dependencies]
+gleam_json = "3.1.0"
+gleam_stdlib = "1.0.5"
+
+[dev-dependencies]
+gleeunit = "1.11.0"

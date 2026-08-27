@@ -1,0 +1,402 @@
+{
+  "schema_version": "agent-substrate-bakeoff-fixture/v1",
+  "fixture_id": "exact-head-lifecycle-v1",
+  "source": {
+    "task_id": "task-17",
+    "task_revision": 4,
+    "repository": "example/agent-substrate",
+    "base_sha": "1111111111111111111111111111111111111111",
+    "initial_head_sha": "2222222222222222222222222222222222222222",
+    "repaired_head_sha": "3333333333333333333333333333333333333333"
+  },
+  "contracts": [
+    {
+      "schema_version": "verification-contract/v1",
+      "contract_id": "contract-h1",
+      "subject": {
+        "task_id": "task-17",
+        "task_revision": 4,
+        "repository": "example/agent-substrate",
+        "base_sha": "1111111111111111111111111111111111111111",
+        "head_sha": "2222222222222222222222222222222222222222",
+        "diff_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "policy_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "risk_floor": "T2",
+      "claims": [
+        {
+          "claim_id": "build-and-test",
+          "required": true,
+          "invariant": "The exact candidate builds and its declared tests pass",
+          "accepted_producer_classes": ["ci"],
+          "accepted_method_classes": ["test-suite"],
+          "required_negative_controls": ["compile-error-fixture"]
+        },
+        {
+          "claim_id": "critical-finding-resolved",
+          "required": true,
+          "invariant": "The exact candidate resolves finding-9",
+          "accepted_producer_classes": ["review-harness"],
+          "accepted_method_classes": ["finding-replay"],
+          "required_negative_controls": ["unresolved-finding-9"]
+        },
+        {
+          "claim_id": "block-dominates",
+          "required": true,
+          "invariant": "A code-class block dominates permissive and judgment inputs",
+          "accepted_producer_classes": ["property-runner"],
+          "accepted_method_classes": ["property-test"],
+          "required_negative_controls": ["permissive-after-code-block"]
+        }
+      ],
+      "environment_constraints": {
+        "network": "disabled",
+        "runner_class": "trusted-fixture-runner",
+        "repository_state": "clean-exact-head"
+      },
+      "obligation_policy": {
+        "mandatory_claim_ids": [
+          "block-dominates",
+          "build-and-test",
+          "critical-finding-resolved"
+        ],
+        "agents_may_add": true,
+        "agents_may_remove_or_downgrade": false
+      }
+    },
+    {
+      "schema_version": "verification-contract/v1",
+      "contract_id": "contract-h2",
+      "subject": {
+        "task_id": "task-17",
+        "task_revision": 4,
+        "repository": "example/agent-substrate",
+        "base_sha": "2222222222222222222222222222222222222222",
+        "head_sha": "3333333333333333333333333333333333333333",
+        "diff_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "policy_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "risk_floor": "T2",
+      "claims": [
+        {
+          "claim_id": "build-and-test",
+          "required": true,
+          "invariant": "The exact candidate builds and its declared tests pass",
+          "accepted_producer_classes": ["ci"],
+          "accepted_method_classes": ["test-suite"],
+          "required_negative_controls": ["compile-error-fixture"]
+        },
+        {
+          "claim_id": "critical-finding-resolved",
+          "required": true,
+          "invariant": "The exact candidate resolves finding-9",
+          "accepted_producer_classes": ["review-harness"],
+          "accepted_method_classes": ["finding-replay"],
+          "required_negative_controls": ["unresolved-finding-9"]
+        },
+        {
+          "claim_id": "block-dominates",
+          "required": true,
+          "invariant": "A code-class block dominates permissive and judgment inputs",
+          "accepted_producer_classes": ["property-runner"],
+          "accepted_method_classes": ["property-test"],
+          "required_negative_controls": ["permissive-after-code-block"]
+        }
+      ],
+      "environment_constraints": {
+        "network": "disabled",
+        "runner_class": "trusted-fixture-runner",
+        "repository_state": "clean-exact-head"
+      },
+      "obligation_policy": {
+        "mandatory_claim_ids": [
+          "block-dominates",
+          "build-and-test",
+          "critical-finding-resolved"
+        ],
+        "agents_may_add": true,
+        "agents_may_remove_or_downgrade": false
+      }
+    }
+  ],
+  "trusted_runner_receipts": [
+    {
+      "schema_version": "evidence-receipt/v1",
+      "receipt_id": "receipt-h1-build-pass",
+      "contract_id": "contract-h1",
+      "subject_head": "2222222222222222222222222222222222222222",
+      "claim_id": "build-and-test",
+      "producer": {"class": "ci", "name": "fixture-ci", "version": "1.0.0"},
+      "method": {
+        "class": "test-suite",
+        "tool": "go",
+        "tool_version": "1.26.5",
+        "command": "go test ./...",
+        "harness_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "environment_digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "expected": "exit 0",
+      "observed": "exit 0",
+      "evidence_digest": "sha256:0101010101010101010101010101010101010101010101010101010101010101",
+      "result": {"status": "pass", "summary": "build and declared tests passed"},
+      "limitations": ["Synthetic fixture; does not establish production provenance"],
+      "runner_verification": {"mechanism": "trusted-fixture-runner", "run_id": "run-h1-001"}
+    },
+    {
+      "schema_version": "evidence-receipt/v1",
+      "receipt_id": "receipt-h1-review-pass",
+      "contract_id": "contract-h1",
+      "subject_head": "2222222222222222222222222222222222222222",
+      "claim_id": "critical-finding-resolved",
+      "producer": {"class": "review-harness", "name": "fixture-review", "version": "1.0.0"},
+      "method": {
+        "class": "finding-replay",
+        "tool": "fixture-review",
+        "tool_version": "1.0.0",
+        "command": "fixture-review replay finding-9",
+        "harness_digest": "sha256:1212121212121212121212121212121212121212121212121212121212121212",
+        "environment_digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "expected": "finding-9 absent",
+      "observed": "finding-9 absent",
+      "evidence_digest": "sha256:0202020202020202020202020202020202020202020202020202020202020202",
+      "result": {"status": "pass", "summary": "finding-9 replay did not reproduce"},
+      "limitations": ["Synthetic fixture; finding truth is not model-judged"],
+      "runner_verification": {"mechanism": "trusted-fixture-runner", "run_id": "run-h1-002"}
+    },
+    {
+      "schema_version": "evidence-receipt/v1",
+      "receipt_id": "receipt-h1-property-pass",
+      "contract_id": "contract-h1",
+      "subject_head": "2222222222222222222222222222222222222222",
+      "claim_id": "block-dominates",
+      "producer": {"class": "property-runner", "name": "fixture-rapid", "version": "1.0.0"},
+      "method": {
+        "class": "property-test",
+        "tool": "rapid",
+        "tool_version": "1.3.0",
+        "command": "go test ./... -run TestBlockDominates",
+        "harness_digest": "sha256:3434343434343434343434343434343434343434343434343434343434343434",
+        "environment_digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "expected": "no counterexample in declared bounds",
+      "observed": "1000 generated inputs; no counterexample",
+      "evidence_digest": "sha256:0303030303030303030303030303030303030303030303030303030303030303",
+      "result": {"status": "pass", "summary": "declared bounded property run passed"},
+      "limitations": ["Passing sampled runs are not a proof of correctness"],
+      "runner_verification": {"mechanism": "trusted-fixture-runner", "run_id": "run-h1-003"}
+    },
+    {
+      "schema_version": "evidence-receipt/v1",
+      "receipt_id": "receipt-h1-review-refutation",
+      "contract_id": "contract-h1",
+      "subject_head": "2222222222222222222222222222222222222222",
+      "claim_id": "critical-finding-resolved",
+      "producer": {"class": "review-harness", "name": "fixture-review", "version": "1.0.0"},
+      "method": {
+        "class": "finding-replay",
+        "tool": "fixture-review",
+        "tool_version": "1.0.0",
+        "command": "fixture-review replay finding-9",
+        "harness_digest": "sha256:1212121212121212121212121212121212121212121212121212121212121212",
+        "environment_digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "expected": "finding-9 absent",
+      "observed": "finding-9 reproduced",
+      "evidence_digest": "sha256:0404040404040404040404040404040404040404040404040404040404040404",
+      "result": {
+        "status": "fail",
+        "summary": "critical finding remains",
+        "counterexample": "request with code block followed by permissive judgment"
+      },
+      "limitations": ["Synthetic counterexample for the shared lifecycle"],
+      "runner_verification": {"mechanism": "trusted-fixture-runner", "run_id": "run-h1-004"}
+    },
+    {
+      "schema_version": "evidence-receipt/v1",
+      "receipt_id": "receipt-h2-build-pass",
+      "contract_id": "contract-h2",
+      "subject_head": "3333333333333333333333333333333333333333",
+      "claim_id": "build-and-test",
+      "producer": {"class": "ci", "name": "fixture-ci", "version": "1.0.0"},
+      "method": {
+        "class": "test-suite",
+        "tool": "go",
+        "tool_version": "1.26.5",
+        "command": "go test ./...",
+        "harness_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "environment_digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "expected": "exit 0",
+      "observed": "exit 0",
+      "evidence_digest": "sha256:0505050505050505050505050505050505050505050505050505050505050505",
+      "result": {"status": "pass", "summary": "repaired head builds and tests pass"},
+      "limitations": ["Synthetic fixture; does not establish production provenance"],
+      "runner_verification": {"mechanism": "trusted-fixture-runner", "run_id": "run-h2-001"}
+    },
+    {
+      "schema_version": "evidence-receipt/v1",
+      "receipt_id": "receipt-h2-property-pass",
+      "contract_id": "contract-h2",
+      "subject_head": "3333333333333333333333333333333333333333",
+      "claim_id": "block-dominates",
+      "producer": {"class": "property-runner", "name": "fixture-rapid", "version": "1.0.0"},
+      "method": {
+        "class": "property-test",
+        "tool": "rapid",
+        "tool_version": "1.3.0",
+        "command": "go test ./... -run TestBlockDominates",
+        "harness_digest": "sha256:3434343434343434343434343434343434343434343434343434343434343434",
+        "environment_digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "expected": "no counterexample in declared bounds",
+      "observed": "1000 generated inputs; no counterexample",
+      "evidence_digest": "sha256:0606060606060606060606060606060606060606060606060606060606060606",
+      "result": {"status": "pass", "summary": "repaired bounded property run passed"},
+      "limitations": ["Passing sampled runs are not a proof of correctness"],
+      "runner_verification": {"mechanism": "trusted-fixture-runner", "run_id": "run-h2-002"}
+    },
+    {
+      "schema_version": "evidence-receipt/v1",
+      "receipt_id": "receipt-h2-review-pass",
+      "contract_id": "contract-h2",
+      "subject_head": "3333333333333333333333333333333333333333",
+      "claim_id": "critical-finding-resolved",
+      "producer": {"class": "review-harness", "name": "fixture-review", "version": "1.0.0"},
+      "method": {
+        "class": "finding-replay",
+        "tool": "fixture-review",
+        "tool_version": "1.0.0",
+        "command": "fixture-review replay finding-9",
+        "harness_digest": "sha256:1212121212121212121212121212121212121212121212121212121212121212",
+        "environment_digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "expected": "finding-9 absent",
+      "observed": "finding-9 absent",
+      "evidence_digest": "sha256:0707070707070707070707070707070707070707070707070707070707070707",
+      "result": {"status": "pass", "summary": "repair resolves finding-9"},
+      "limitations": ["Synthetic fixture; finding truth is not model-judged"],
+      "runner_verification": {"mechanism": "trusted-fixture-runner", "run_id": "run-h2-003"}
+    }
+  ],
+  "oracle_assurance_snapshots": [
+    {
+      "case_id": "aligned-h1",
+      "subject_head": "2222222222222222222222222222222222222222",
+      "contract_id": "contract-h1",
+      "summary": "SUPPORTED",
+      "coverage": "3/3 required claims supported",
+      "claim_outcomes": {
+        "block-dominates": "supported",
+        "build-and-test": "supported",
+        "critical-finding-resolved": "supported"
+      },
+      "accepted_receipts": ["receipt-h1-build-pass", "receipt-h1-property-pass", "receipt-h1-review-pass"],
+      "rejected_receipts": [],
+      "gaps": [],
+      "merge_authority": "none"
+    },
+    {
+      "case_id": "refuted-h1",
+      "subject_head": "2222222222222222222222222222222222222222",
+      "contract_id": "contract-h1",
+      "summary": "REFUTED",
+      "coverage": "2/3 required claims supported",
+      "claim_outcomes": {
+        "block-dominates": "supported",
+        "build-and-test": "supported",
+        "critical-finding-resolved": "refuted"
+      },
+      "accepted_receipts": ["receipt-h1-build-pass", "receipt-h1-property-pass", "receipt-h1-review-pass", "receipt-h1-review-refutation"],
+      "rejected_receipts": [],
+      "gaps": ["critical-finding-resolved is refuted by receipt-h1-review-refutation"],
+      "merge_authority": "none"
+    },
+    {
+      "case_id": "stale-h2",
+      "subject_head": "3333333333333333333333333333333333333333",
+      "contract_id": "contract-h2",
+      "summary": "INSUFFICIENT",
+      "coverage": "0/3 required claims supported",
+      "claim_outcomes": {
+        "block-dominates": "insufficient",
+        "build-and-test": "insufficient",
+        "critical-finding-resolved": "insufficient"
+      },
+      "accepted_receipts": [],
+      "rejected_receipts": [
+        {"receipt_id": "receipt-h1-build-pass", "reason": "stale_subject"},
+        {"receipt_id": "receipt-h1-property-pass", "reason": "stale_subject"},
+        {"receipt_id": "receipt-h1-review-pass", "reason": "stale_subject"}
+      ],
+      "gaps": [
+        "block-dominates requires trusted evidence for contract-h2",
+        "build-and-test requires trusted evidence for contract-h2",
+        "critical-finding-resolved requires trusted evidence for contract-h2"
+      ],
+      "merge_authority": "none"
+    },
+    {
+      "case_id": "partial-h2",
+      "subject_head": "3333333333333333333333333333333333333333",
+      "contract_id": "contract-h2",
+      "summary": "INSUFFICIENT",
+      "coverage": "2/3 required claims supported",
+      "claim_outcomes": {
+        "block-dominates": "supported",
+        "build-and-test": "supported",
+        "critical-finding-resolved": "insufficient"
+      },
+      "accepted_receipts": ["receipt-h2-build-pass", "receipt-h2-property-pass"],
+      "rejected_receipts": [],
+      "gaps": ["critical-finding-resolved requires trusted evidence for contract-h2"],
+      "merge_authority": "none"
+    },
+    {
+      "case_id": "refreshed-h2",
+      "subject_head": "3333333333333333333333333333333333333333",
+      "contract_id": "contract-h2",
+      "summary": "SUPPORTED",
+      "coverage": "3/3 required claims supported",
+      "claim_outcomes": {
+        "block-dominates": "supported",
+        "build-and-test": "supported",
+        "critical-finding-resolved": "supported"
+      },
+      "accepted_receipts": ["receipt-h2-build-pass", "receipt-h2-property-pass", "receipt-h2-review-pass"],
+      "rejected_receipts": [],
+      "gaps": [],
+      "merge_authority": "none"
+    }
+  ],
+  "attacks": {
+    "raw_agent_receipt": {
+      "mutation": "A shape-valid pass receipt self-asserts trusted provenance",
+      "expected_reason": "untrusted_provenance"
+    },
+    "correlated_duplicate": {
+      "mutation": "The same property result is copied under a second receipt id with the same run and harness",
+      "expected_effect": "declared coverage does not increase"
+    },
+    "branchroom_late_parent_terminal": {
+      "mutation": "A terminal result from the parent epoch arrives after two child forks exist",
+      "expected_reason": "parent_epoch_terminal"
+    },
+    "proofline_same_head_contract_drift": {
+      "mutation": "Task revision and policy digest change while the candidate head stays H1",
+      "expected_reason": "contract_identity_mismatch"
+    },
+    "obligation_late_refutation": {
+      "mutation": "A critical refutation arrives after the original three slots appeared complete",
+      "expected_reason": "mandatory_obligation_reopened"
+    },
+    "obligation_weaken_floor": {
+      "mutation": "An agent overlay deletes mandatory claim critical-finding-resolved",
+      "expected_reason": "mandatory_contract_weakened"
+    },
+    "mandate_scope_inflation": {
+      "mutation": "A validly signed child adds publish_candidate to an H2 review-only mandate",
+      "expected_reason": "scope_inflation"
+    }
+  }
+}

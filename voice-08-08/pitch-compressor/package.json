@@ -1,0 +1,14 @@
+{
+  "name": "hack2-pitch-compressor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test grader.test.mjs server.test.mjs",
+    "check": "node --check server.mjs && node --check grader.mjs && node --check app.mjs && node --test grader.test.mjs server.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

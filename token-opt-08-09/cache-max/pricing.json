@@ -1,0 +1,18 @@
+{
+  "_note": "The ONE editable price table. Fill rates_usd_per_mtok from https://docs.claude.com/en/docs/about-claude/pricing . Leave a rate at 0 to mark it TODO. If any rate is still 0, `make demo` falls back to example_rates_usd_per_mtok and prints a loud EXAMPLE-PRICES banner so no number is mistaken for real.",
+  "rates_usd_per_mtok": {
+    "fresh_input": 0,
+    "output": 0,
+    "cache_read": 0,
+    "cache_write_5m": 0,
+    "cache_write_1h": 0
+  },
+  "example_rates_usd_per_mtok": {
+    "_comment": "ILLUSTRATIVE placeholders ONLY — not real Claude prices, do not cite. They exist so the demo prints a plausible dollar figure out of the box. Relative shape is the point: reads are far cheaper than fresh input, writes are dearer, 1h writes dearer than 5m.",
+    "fresh_input": 3.00,
+    "output": 15.00,
+    "cache_read": 0.30,
+    "cache_write_5m": 3.75,
+    "cache_write_1h": 6.00
+  }
+}

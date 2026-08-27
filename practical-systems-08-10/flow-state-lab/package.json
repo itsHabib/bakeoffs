@@ -1,0 +1,18 @@
+{
+  "name": "flow-state-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Quint model and executable regression fixtures for a CAM-to-factory workflow protocol.",
+  "type": "module",
+  "scripts": {
+    "typecheck": "quint typecheck model/CamFlow.qnt && quint typecheck model/KnownFailures.qnt",
+    "simulate": "quint run model/CamFlow.qnt --main=CamFlow --invariant=allInvariants --max-steps=30 --max-samples=10000 --verbosity=1",
+    "verify": "node scripts/verify.mjs",
+    "fixtures": "node scripts/export-fixtures.mjs",
+    "test": "node --test",
+    "check": "npm run typecheck && npm run simulate && npm run verify && npm run fixtures && npm test"
+  },
+  "devDependencies": {
+    "@informalsystems/quint": "0.32.0"
+  }
+}

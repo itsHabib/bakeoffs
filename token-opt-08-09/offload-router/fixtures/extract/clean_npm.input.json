@@ -1,0 +1,8 @@
+{
+  "schema": {
+    "package": "string",
+    "installed": "int",
+    "vulnerabilities": "int"
+  },
+  "text": "npm warn deprecated har-validator@5.1.5\nadded 214 packages, and audited 215 packages in 3s\n\n12 vulnerabilities (3 moderate, 9 high)\n\nrun `npm audit fix` to address them\npackage: @acme/dashboard@2.1.0"
+}

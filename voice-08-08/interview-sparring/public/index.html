@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1715">
+  <title>Interview Sparring</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Interview Sparring home">
+      <span class="brand-mark" aria-hidden="true">IS</span>
+      <span>Interview Sparring</span>
+    </a>
+    <span class="category">Behavioral round · 3 questions</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Practice that pushes back</p>
+        <h1 id="hero-title">Your answer isn’t ready until it survives a follow-up.</h1>
+        <p class="lede">A live interviewer listens, cuts off the ramble, and presses the missing part. The voice phrases it. Deterministic code decides why.</p>
+        <div class="actions">
+          <button id="start-live" class="button primary" type="button">Start live round</button>
+          <button id="start-replay" class="button secondary" type="button">Watch 3-question replay</button>
+        </div>
+        <p class="privacy">Live mode sends microphone audio to OpenAI Realtime. The API key stays on this local server. Replay needs no mic and no key.</p>
+      </div>
+      <aside class="meter-card" aria-label="How grading works">
+        <div class="meter-head">
+          <span>CODE-GRADED</span>
+          <span class="pulse-dot" aria-hidden="true"></span>
+        </div>
+        <ol>
+          <li><span>01</span>STAR beats detected</li>
+          <li><span>02</span>Question overlap checked</li>
+          <li><span>03</span>45-second budget enforced</li>
+        </ol>
+        <p>No model-generated scores.</p>
+      </aside>
+    </section>
+
+    <section id="arena" class="arena" aria-labelledby="arena-title">
+      <div class="arena-heading">
+        <div>
+          <p class="eyebrow">Live round</p>
+          <h2 id="arena-title">The sparring room</h2>
+        </div>
+        <div class="connection">
+          <span id="status-dot" class="status-dot" data-state="idle" aria-hidden="true"></span>
+          <span id="connection-status">Ready for replay or voice</span>
+        </div>
+      </div>
+
+      <div class="round-grid">
+        <article class="interviewer-card">
+          <div class="card-label">
+            <span>INTERVIEWER</span>
+            <span id="question-counter">— / 3</span>
+          </div>
+          <blockquote id="current-prompt">Choose live voice or the canned replay to begin.</blockquote>
+          <div class="timer-row">
+            <div>
+              <span class="timer-label">ANSWER BUDGET</span>
+              <strong id="timer">00:45</strong>
+            </div>
+            <div class="budget-track" aria-hidden="true"><span id="budget-fill"></span></div>
+          </div>
+          <p id="followup-reason" class="reason" hidden></p>
+        </article>
+
+        <article class="signal-card">
+          <div class="card-label"><span>DETERMINISTIC SIGNAL</span><span id="signal-score">—</span></div>
+          <div class="star-grid" id="star-grid">
+            <span data-beat="situation">S<span>ituation</span></span>
+            <span data-beat="task">T<span>ask</span></span>
+            <span data-beat="action">A<span>ction</span></span>
+            <span data-beat="result">R<span>esult</span></span>
+          </div>
+          <dl class="metrics">
+            <div><dt>Filler density</dt><dd id="filler-metric">—</dd></div>
+            <div><dt>Question overlap</dt><dd id="overlap-metric">—</dd></div>
+            <div><dt>Time</dt><dd id="time-metric">—</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <div class="transcript-panel">
+        <div class="card-label">
+          <span>ROUND TRANSCRIPT</span>
+          <button id="disconnect-live" class="text-button" type="button" hidden>End live round</button>
+        </div>
+        <div id="transcript" class="transcript" aria-live="polite">
+          <p class="empty">The pushback and the rule that triggered it will appear here.</p>
+        </div>
+      </div>
+      <p id="error" class="error" role="alert"></p>
+    </section>
+
+    <section id="debrief" class="debrief" aria-labelledby="debrief-title" hidden>
+      <div class="debrief-heading">
+        <div>
+          <p class="eyebrow">The paid product</p>
+          <h2 id="debrief-title">Your debrief</h2>
+        </div>
+        <div class="average"><span>ROUND SCORE</span><strong id="average-score">—</strong></div>
+      </div>
+      <div id="scorecards" class="scorecards"></div>
+      <div class="debrief-bottom">
+        <article class="dodge-card">
+          <p class="card-label">WORST DODGE · QUOTED BACK</p>
+          <blockquote id="worst-dodge">No dodge detected.</blockquote>
+        </article>
+        <article class="tomorrow-card">
+          <p class="card-label">RE-RUN TOMORROW</p>
+          <ol id="tomorrow-list"></ol>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Interview Sparring</span>
+    <span>Education / Careers · $14.99/mo during the search</span>
+  </footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

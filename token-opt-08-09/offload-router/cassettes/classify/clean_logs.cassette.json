@@ -1,0 +1,6 @@
+{
+  "name": "classify/clean_logs",
+  "responses": [
+    "{\"assignments\": [\"INFO\", \"WARN\", \"ERROR\", \"INFO\", \"ERROR\"]}"
+  ]
+}

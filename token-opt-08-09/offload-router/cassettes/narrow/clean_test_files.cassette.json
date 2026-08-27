@@ -1,0 +1,6 @@
+{
+  "name": "narrow/clean_test_files",
+  "responses": [
+    "{\"matched\": [\"gate/gate_test.go\", \"cmd/main_test.go\", \"internal/ledger_test.go\"]}"
+  ]
+}

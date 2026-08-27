@@ -1,0 +1,6 @@
+{
+  "name": "narrow/clean_markdown",
+  "responses": [
+    "{\"matched\": [\"docs/DESIGN.md\", \"README.md\", \"notes.md\"]}"
+  ]
+}

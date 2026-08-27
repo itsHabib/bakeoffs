@@ -1,0 +1,49 @@
+# ============================================================================
+#  PRICE TABLE — the ONLY place dollars come from. Fill it, don't guess.
+#
+#  TODO(operator): replace every 0.0 with the real $/MTok (US dollars per
+#  MILLION tokens) from https://docs.claude.com/en/docs/about-claude/pricing
+#
+#  0.0 means UNFILLED. audit.py detects an all-zero table and shows tokens
+#  only (with a warning) until you fill at least one model. Prices are NOT
+#  hardcoded from model memory anywhere in this repo — this file is it.
+#
+#  Columns (one per spend category — each is billed at a different rate):
+#    input           fresh (uncached) input tokens
+#    output          generated output tokens
+#    cache_read      tokens served from the prompt cache (cheapest)
+#    cache_write_5m  ephemeral 5-minute cache writes
+#    cache_write_1h  ephemeral 1-hour cache writes (most expensive write)
+#
+#  One [models."<id>"] block per model that appears in your transcripts.
+#  Anything not listed falls back to [default].
+# ============================================================================
+
+[models."claude-opus-5"]
+input          = 0.0
+output         = 0.0
+cache_read     = 0.0
+cache_write_5m = 0.0
+cache_write_1h = 0.0
+
+[models."claude-opus-4-8"]
+input          = 0.0
+output         = 0.0
+cache_read     = 0.0
+cache_write_5m = 0.0
+cache_write_1h = 0.0
+
+[models."claude-fable-5"]
+input          = 0.0
+output         = 0.0
+cache_read     = 0.0
+cache_write_5m = 0.0
+cache_write_1h = 0.0
+
+# Fallback for any model id not listed above (e.g. <synthetic>, future models).
+[default]
+input          = 0.0
+output         = 0.0
+cache_read     = 0.0
+cache_write_5m = 0.0
+cache_write_1h = 0.0

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "scenario": "invalidation-orphans-remote-payload",
+  "summary": "Local invalidation abandons a remote payload without reconciliation or compensation.",
+  "source": {
+    "specification": "model/KnownFailures.qnt",
+    "module": "InvalidateAfterRemoteSaveBug",
+    "violatedInvariant": "remoteWorkIsNotOrphaned"
+  },
+  "trace": [
+    {
+      "step": 0,
+      "action": "init",
+      "state": {
+        "taskStatus": "NotStarted",
+        "epochStatus": "EpochOpen",
+        "flowStatus": "NoPayload",
+        "commandStatus": "NoCommand",
+        "snapshotReady": false,
+        "receiptRecorded": false,
+        "recoveryAvailable": false,
+        "flowSaveCount": 0
+      }
+    },
+    {
+      "step": 1,
+      "action": "start-task",
+      "state": {
+        "taskStatus": "Started",
+        "epochStatus": "EpochOpen",
+        "flowStatus": "NoPayload",
+        "commandStatus": "NoCommand",
+        "snapshotReady": false,
+        "receiptRecorded": false,
+        "recoveryAvailable": false,
+        "flowSaveCount": 0
+      }
+    },
+    {
+      "step": 2,
+      "action": "stage-snapshot",
+      "state": {
+        "taskStatus": "Started",
+        "epochStatus": "EpochOpen",
+        "flowStatus": "NoPayload",
+        "commandStatus": "NoCommand",
+        "snapshotReady": true,
+        "receiptRecorded": false,
+        "recoveryAvailable": false,
+        "flowSaveCount": 0
+      }
+    },
+    {
+      "step": 3,
+      "action": "open-flow-write",
+      "state": {
+        "taskStatus": "Started",
+        "epochStatus": "EpochOpen",
+        "flowStatus": "WriteOpen",
+        "commandStatus": "NoCommand",
+        "snapshotReady": true,
+        "receiptRecorded": false,
+        "recoveryAvailable": false,
+        "flowSaveCount": 0
+      }
+    },
+    {
+      "step": 4,
+      "action": "save-flow-payload",
+      "state": {
+        "taskStatus": "Started",
+        "epochStatus": "EpochOpen",
+        "flowStatus": "PayloadSaved",
+        "commandStatus": "NoCommand",
+        "snapshotReady": true,
+        "receiptRecorded": false,
+        "recoveryAvailable": false,
+        "flowSaveCount": 1
+      }
+    },
+    {
+      "step": 5,
+      "action": "invalidate-after-remote-save",
+      "state": {
+        "taskStatus": "TaskInvalidated",
+        "epochStatus": "EpochInvalidated",
+        "flowStatus": "PayloadSaved",
+        "commandStatus": "NoCommand",
+        "snapshotReady": true,
+        "receiptRecorded": false,
+        "recoveryAvailable": false,
+        "flowSaveCount": 1
+      }
+    }
+  ]
+}

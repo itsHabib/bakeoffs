@@ -1,0 +1,6 @@
+{
+  "name": "extract/clean_npm",
+  "responses": [
+    "{\"package\": \"@acme/dashboard@2.1.0\", \"installed\": 214, \"vulnerabilities\": 12}"
+  ]
+}

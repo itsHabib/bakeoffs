@@ -1,0 +1,226 @@
+{
+  "schema_version": "obligation-frontier/v1",
+  "goal": {
+    "task_id": "task-17",
+    "task_revision": 4,
+    "contract_id": "contract-h2",
+    "repository": "example/agent-substrate",
+    "base_sha": "2222222222222222222222222222222222222222",
+    "head_sha": "3333333333333333333333333333333333333333",
+    "diff_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "policy_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  },
+  "open_frontier": [],
+  "obligations": [
+    {
+      "obligation_id": "obl_7116eab5c91b7d44e551",
+      "kind": "collect_claim",
+      "claim_id": "block-dominates",
+      "subject": {
+        "task_id": "task-17",
+        "task_revision": 4,
+        "contract_id": "contract-h1",
+        "repository": "example/agent-substrate",
+        "base_sha": "1111111111111111111111111111111111111111",
+        "head_sha": "2222222222222222222222222222222222222222",
+        "diff_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "policy_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "origin": "contract",
+      "mandatory": true,
+      "state": "superseded",
+      "reason": "subject_superseded",
+      "prerequisite_ids": null,
+      "transitions": [
+        {
+          "sequence": 1,
+          "state": "open",
+          "reason": "mandatory_contract_slot_opened"
+        },
+        {
+          "sequence": 2,
+          "state": "discharged",
+          "reason": "oracle_claim_supported"
+        },
+        {
+          "sequence": 4,
+          "state": "superseded",
+          "reason": "subject_superseded"
+        }
+      ]
+    },
+    {
+      "obligation_id": "obl_755ce495d2bac2f76810",
+      "kind": "refresh_subject",
+      "claim_id": "subject-refresh",
+      "subject": {
+        "task_id": "task-17",
+        "task_revision": 4,
+        "contract_id": "contract-h2",
+        "repository": "example/agent-substrate",
+        "base_sha": "2222222222222222222222222222222222222222",
+        "head_sha": "3333333333333333333333333333333333333333",
+        "diff_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "policy_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "origin": "derived",
+      "mandatory": true,
+      "state": "discharged",
+      "reason": "exact_subject_assurance_observed",
+      "prerequisite_ids": null,
+      "transitions": [
+        {
+          "sequence": 4,
+          "state": "open",
+          "reason": "subject_changed_refresh_required"
+        },
+        {
+          "sequence": 5,
+          "state": "discharged",
+          "reason": "exact_subject_assurance_observed"
+        }
+      ]
+    },
+    {
+      "obligation_id": "obl_9c3429cdbd6cb27f9401",
+      "kind": "resolve_refutation",
+      "claim_id": "critical-finding-resolved",
+      "subject": {
+        "task_id": "task-17",
+        "task_revision": 4,
+        "contract_id": "contract-h1",
+        "repository": "example/agent-substrate",
+        "base_sha": "1111111111111111111111111111111111111111",
+        "head_sha": "2222222222222222222222222222222222222222",
+        "diff_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "policy_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "origin": "derived",
+      "mandatory": true,
+      "state": "superseded",
+      "reason": "subject_superseded",
+      "prerequisite_ids": null,
+      "transitions": [
+        {
+          "sequence": 3,
+          "state": "reopened",
+          "reason": "mandatory_obligation_reopened"
+        },
+        {
+          "sequence": 4,
+          "state": "superseded",
+          "reason": "subject_superseded"
+        }
+      ]
+    },
+    {
+      "obligation_id": "obl_ac9ceeeb762acd58aa47",
+      "kind": "collect_claim",
+      "claim_id": "critical-finding-resolved",
+      "subject": {
+        "task_id": "task-17",
+        "task_revision": 4,
+        "contract_id": "contract-h1",
+        "repository": "example/agent-substrate",
+        "base_sha": "1111111111111111111111111111111111111111",
+        "head_sha": "2222222222222222222222222222222222222222",
+        "diff_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "policy_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "origin": "contract",
+      "mandatory": true,
+      "state": "superseded",
+      "reason": "subject_superseded",
+      "prerequisite_ids": null,
+      "transitions": [
+        {
+          "sequence": 1,
+          "state": "open",
+          "reason": "mandatory_contract_slot_opened"
+        },
+        {
+          "sequence": 2,
+          "state": "discharged",
+          "reason": "oracle_claim_supported"
+        },
+        {
+          "sequence": 4,
+          "state": "superseded",
+          "reason": "subject_superseded"
+        }
+      ]
+    },
+    {
+      "obligation_id": "obl_b6a22171807124464ba9",
+      "kind": "collect_claim",
+      "claim_id": "build-and-test",
+      "subject": {
+        "task_id": "task-17",
+        "task_revision": 4,
+        "contract_id": "contract-h1",
+        "repository": "example/agent-substrate",
+        "base_sha": "1111111111111111111111111111111111111111",
+        "head_sha": "2222222222222222222222222222222222222222",
+        "diff_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "policy_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "origin": "contract",
+      "mandatory": true,
+      "state": "superseded",
+      "reason": "subject_superseded",
+      "prerequisite_ids": null,
+      "transitions": [
+        {
+          "sequence": 1,
+          "state": "open",
+          "reason": "mandatory_contract_slot_opened"
+        },
+        {
+          "sequence": 2,
+          "state": "discharged",
+          "reason": "oracle_claim_supported"
+        },
+        {
+          "sequence": 4,
+          "state": "superseded",
+          "reason": "subject_superseded"
+        }
+      ]
+    },
+    {
+      "obligation_id": "obl_f3dd75dc73bfcaaaf44a",
+      "kind": "collect_claim",
+      "claim_id": "critical-finding-resolved",
+      "subject": {
+        "task_id": "task-17",
+        "task_revision": 4,
+        "contract_id": "contract-h2",
+        "repository": "example/agent-substrate",
+        "base_sha": "2222222222222222222222222222222222222222",
+        "head_sha": "3333333333333333333333333333333333333333",
+        "diff_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "policy_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "origin": "derived",
+      "mandatory": true,
+      "state": "discharged",
+      "reason": "oracle_claim_supported",
+      "prerequisite_ids": [
+        "obl_755ce495d2bac2f76810"
+      ],
+      "transitions": [
+        {
+          "sequence": 5,
+          "state": "open",
+          "reason": "oracle_named_gap_opened"
+        },
+        {
+          "sequence": 6,
+          "state": "discharged",
+          "reason": "oracle_claim_supported"
+        }
+      ]
+    }
+  ],
+  "event_digest": "sha256:2d7274f1251f5e52786a27ca0c355c0050b36d5574264d6d1ad0edd91f5f582e"
+}

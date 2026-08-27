@@ -1,0 +1,10 @@
+{
+  "schema": "E2EFixtureV1",
+  "subject": "rev-b",
+  "checks": [
+    { "name": "checkout", "passed": true },
+    { "name": "unit", "passed": true },
+    { "name": "browser", "passed": true },
+    { "name": "artifact", "passed": true }
+  ]
+}

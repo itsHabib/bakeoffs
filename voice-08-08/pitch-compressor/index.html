@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ecff4f">
+    <title>Pitch Compressor — 20 seconds, one conclusion</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="wordmark" href="#top" aria-label="Pitch Compressor home">
+        <span class="mark">PC</span>
+        <span>Pitch<br>Compressor</span>
+      </a>
+      <div class="session-label">3 reps · 20 sec · scored in code</div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">Verbal pressure test</p>
+        <h1>Twenty seconds.<br><em>One conclusion.</em></h1>
+        <p class="dek">Pitch a skeptical listener. At zero, the wall wins—even mid-word. The scorecard does not negotiate.</p>
+        <div class="actions">
+          <button id="connect" class="button button-dark" type="button">Connect live listener</button>
+          <button id="replay" class="button button-light" type="button">Replay 3 canned reps</button>
+        </div>
+        <p id="connection-status" class="status" role="status">Canned mode needs no mic and no API key.</p>
+      </section>
+
+      <section class="stage" aria-labelledby="rep-title">
+        <div class="clock-wrap">
+          <svg class="clock" viewBox="0 0 220 220" aria-hidden="true">
+            <circle class="clock-track" cx="110" cy="110" r="92"></circle>
+            <circle id="clock-progress" class="clock-progress" cx="110" cy="110" r="92"></circle>
+          </svg>
+          <div class="clock-copy">
+            <strong id="countdown">20.0</strong>
+            <span>seconds</span>
+          </div>
+        </div>
+        <div class="rep-copy">
+          <div class="rep-kicker"><span id="rep-number">Rep 1 of 3</span><span id="mode-badge">Ready</span></div>
+          <h2 id="rep-title">Make the ask survive.</h2>
+          <p id="live-transcript" class="live-transcript">Your words will appear here while the wall closes in.</p>
+          <button id="start-rep" class="button button-acid" type="button">Start 20-second rep</button>
+          <button id="stop-rep" class="text-button" type="button" hidden>Stop early</button>
+        </div>
+      </section>
+
+      <section class="results" aria-labelledby="results-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Session evidence</p>
+            <h2 id="results-title">The trend, not the pep talk.</h2>
+          </div>
+          <div id="trend" class="trend" aria-label="No scores yet">
+            <span class="empty-trend">Run a rep to draw the line.</span>
+          </div>
+        </div>
+        <div id="scorecards" class="scorecards">
+          <div class="empty-state">Three scorecards land here. Every point traces to a rule in <code>grader.mjs</code>.</div>
+        </div>
+      </section>
+    </main>
+
+    <template id="scorecard-template">
+      <article class="scorecard">
+        <header>
+          <div><span class="card-rep"></span><span class="card-time"></span></div>
+          <strong class="card-score"></strong>
+        </header>
+        <div class="survival">
+          <span>Survived</span>
+          <p class="card-survived"></p>
+        </div>
+        <div class="eaten">
+          <span>Wall ate</span>
+          <p class="card-eaten"></p>
+        </div>
+        <dl class="rule-lines"></dl>
+        <div class="cut-diff" hidden>
+          <span>Cut since last rep</span>
+          <p class="card-cut"></p>
+        </div>
+      </article>
+    </template>
+
+    <footer>
+      <span>No model judgment.</span>
+      <span>20.0s hard wall.</span>
+      <span>Your next sentence costs time.</span>
+    </footer>
+    <script type="module" src="/app.mjs"></script>
+  </body>
+</html>

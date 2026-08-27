@@ -1,0 +1,35 @@
+{
+  "schema_version": "proofline-demo/v1",
+  "entry": "hack-proofline",
+  "case_id": "proofline_same_head_contract_drift",
+  "input_bundle_digest": "sha256:ec742e0129e44d0529bbf5051125b33cfa6bea3c665463062c5da0f1f8947402",
+  "subject_identity": {
+    "task_id": "task-17",
+    "task_revision": 5,
+    "repository": "example/agent-substrate",
+    "base_sha": "1111111111111111111111111111111111111111",
+    "head_sha": "2222222222222222222222222222222222222222",
+    "diff_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "contract_id": "contract-h1:drift",
+    "policy_digest": "sha256:a94dc8eaae6290bd884fea20af95d45ebf27c901637bd155b25cdf59c3a56503",
+    "artifact_id": "contract-h1:drift"
+  },
+  "native_status": "historical",
+  "reason_codes": [
+    "contract_identity_mismatch"
+  ],
+  "native_artifact_digest": "sha256:ec97ce706099ec6c963646abd8b865f43b078be4a2f2c8730c89f1c333a26662",
+  "first_stale_edge": "contract-h1 -\u003e assurance:aligned-h1",
+  "retracted_nodes": [
+    "assurance:aligned-h1",
+    "consumer:compliance:aligned-h1",
+    "consumer:release:aligned-h1"
+  ],
+  "mutant_status": "current",
+  "oracle_assurance": {
+    "summary": "SUPPORTED",
+    "coverage": "3/3 required claims supported",
+    "gaps": [],
+    "merge_authority": "none"
+  }
+}

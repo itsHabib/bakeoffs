@@ -1,0 +1,8 @@
+{
+  "schema": {
+    "image": "string",
+    "digest": "string",
+    "size_mb": "int"
+  },
+  "text": "Step 8/8 : CMD [\"/api\"]\n ---> Running in 2b1c9f0a\nSuccessfully built 7f3a9c2b1e04\nSuccessfully tagged acme/api:latest\nImage size: 189MB\n"
+}

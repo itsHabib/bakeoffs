@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hack-atc — pattern work, Millbrook Tower</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>MILLBROOK TWR <span class="freq">118.30</span></h1>
+    <p id="atis"></p>
+  </div>
+  <div class="header-right">
+    <button id="btn-demo" class="demo">▶ Fly the script <span class="sub">(no mic — canned demo)</span></button>
+    <button id="btn-reset" class="ghost" hidden>↺ Reset</button>
+  </div>
+</header>
+
+<main>
+  <section id="log" aria-live="polite"></section>
+
+  <aside id="panel">
+    <h2>READBACK GRADER</h2>
+    <p id="phase" class="phase"></p>
+    <ul id="elements"></ul>
+    <p id="flag" class="flag" hidden></p>
+    <p class="hint">Deterministic — graded by code as you transmit. No model.</p>
+  </aside>
+</main>
+
+<footer id="inputbar">
+  <button id="btn-mic" title="Speak (Chrome/Safari)">🎙</button>
+  <input id="say" type="text" autocomplete="off" spellcheck="false"
+         placeholder="Read back the instruction, then Transmit…">
+  <button id="btn-tx">TRANSMIT</button>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

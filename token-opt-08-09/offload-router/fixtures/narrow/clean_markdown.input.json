@@ -1,0 +1,10 @@
+{
+  "criterion": "markdown files",
+  "paths": [
+    "docs/DESIGN.md",
+    "cli.py",
+    "README.md",
+    "fixtures/data.json",
+    "notes.md"
+  ]
+}

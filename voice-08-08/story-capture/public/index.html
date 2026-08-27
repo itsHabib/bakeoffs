@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A warm voice interviewer that turns one family memory into a provenance-safe chapter.">
+    <title>Keepsake — turn conversation into a chapter</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main>
+      <header class="masthead">
+        <a class="brand" href="#top" aria-label="Keepsake home">
+          <span class="brand-mark" aria-hidden="true">K</span>
+          <span>Keepsake</span>
+        </a>
+        <span class="topic-pill">Today’s story: How you two met</span>
+      </header>
+
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">One conversation. One chapter.</p>
+          <h1>The stories they tell deserve to be <em>kept.</em></h1>
+          <p class="lede">A gentle voice interviewer listens for the pieces that make a memory complete, follows up on what matters, and arranges the teller’s exact words into a chapter.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" id="replay-button" type="button">
+              <span aria-hidden="true">▶</span> Replay the 2-minute story
+            </button>
+            <button class="button button-secondary" id="live-button" type="button">
+              <span class="mic-dot" aria-hidden="true"></span> Start a live interview
+            </button>
+          </div>
+          <p class="privacy-note">Replay needs no microphone or account. Live audio disappears with this tab.</p>
+        </div>
+
+        <aside class="promise-card" aria-label="Keepsake promise">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote>Not an AI biography. A chapter assembled from her own words.</blockquote>
+          <div class="promise-rule"></div>
+          <p><strong>Our promise</strong><br>Every sentence can be traced back to the conversation.</p>
+        </aside>
+      </section>
+
+      <section class="workspace" aria-labelledby="session-heading">
+        <div class="session-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">The conversation</p>
+              <h2 id="session-heading">A memory, taking shape</h2>
+            </div>
+            <div class="status" id="session-status" role="status" aria-live="polite">
+              <span class="status-light"></span>
+              Ready
+            </div>
+          </div>
+
+          <div class="transcript empty" id="transcript" aria-live="polite">
+            <div class="empty-state">
+              <span class="sound-rings" aria-hidden="true"><i></i><i></i><i></i></span>
+              <p>Press replay to watch a complete interview unfold,<br>or start live and tell the story yourself.</p>
+            </div>
+          </div>
+
+          <div class="live-controls hidden" id="live-controls">
+            <div class="listening-indicator"><span></span> Listening for your answer</div>
+            <button class="button button-secondary" id="finish-button" type="button">Finish &amp; make the chapter</button>
+          </div>
+        </div>
+
+        <aside class="spine-panel" aria-labelledby="spine-heading">
+          <p class="eyebrow">The story spine</p>
+          <h2 id="spine-heading">What makes it complete</h2>
+          <p class="spine-intro">Keepsake quietly tracks six essential beats. It never asks the model to decide what counts.</p>
+          <ol class="spine-list" id="spine-list"></ol>
+          <div class="next-question" id="next-question">
+            <span>Next question</span>
+            <p>About when was this — what year or season do you remember?</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="chapter-section hidden" id="chapter-section" aria-labelledby="chapter-heading">
+        <div class="chapter-heading-row">
+          <div>
+            <p class="eyebrow">Your chapter</p>
+            <h2 id="chapter-heading">The Summer Daniel Noticed Me</h2>
+          </div>
+          <div class="provenance-badge" id="provenance-badge">✓ Every sentence traced to the interview</div>
+        </div>
+        <article class="chapter-paper" id="chapter-text"></article>
+        <div class="open-questions" id="open-questions"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Keepsake</span>
+      <p>Made for the stories families don’t want to lose.</p>
+    </footer>
+
+    <audio id="remote-audio" autoplay></audio>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

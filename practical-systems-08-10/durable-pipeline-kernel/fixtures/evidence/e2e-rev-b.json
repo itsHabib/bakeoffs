@@ -1,0 +1,14 @@
+{
+  "schema": "EvidenceReplayManifestV1",
+  "subject": "rev-b",
+  "claim": "e2e",
+  "pipeline_digest": "sha256:shipping-pipeline-v1",
+  "tool": "fixture-validator-e2e",
+  "tool_version": "1.0.0",
+  "command": "gleam run -m replay_evidence",
+  "input_path": "fixtures/evidence/e2e-rev-b-input.json",
+  "input_digest": "44ff1c5f670a76aee904737ccd707b6873118ae71bba7b4bc15661b5057fcee3",
+  "seed": "424242",
+  "bounds": ["cases=4", "timeout_ms=1000"],
+  "expected_verdict": "supported"
+}

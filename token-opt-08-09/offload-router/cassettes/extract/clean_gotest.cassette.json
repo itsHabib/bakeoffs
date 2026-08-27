@@ -1,0 +1,6 @@
+{
+  "name": "extract/clean_gotest",
+  "responses": [
+    "{\"module\": \"github.com/acme/widget\", \"go_version\": \"go1.22.3\", \"fail_count\": 2}"
+  ]
+}

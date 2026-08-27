@@ -1,0 +1,3 @@
+{"type": "assistant", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "tool_ansi_0", "name": "Bash", "input": {"command": "make build"}}], "usage": {}}}
+{"type": "user", "message": {"role": "user", "content": [{"type": "tool_result", "tool_use_id": "tool_ansi_0", "content": "\u001b[32mCompiling\u001b[0m module core\ndownloading [                    ] 0%\rdownloading [==========          ] 50%\rdownloading [====================] 100% done\n\u001b[1m\u001b[31mERROR\u001b[0m nope just kidding\n\n\n\n\n\u001b[32mBUILD OK\u001b[0m in 4.2s\n"}]}}
+{"type": "assistant", "message": {"role": "assistant", "content": [{"type": "text", "text": "Build passed. The ANSI/progress noise is irrelevant to me."}]}}

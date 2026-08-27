@@ -1,0 +1,20 @@
+name: capability-dsl
+version: 0.1.0.0
+github: itsHabib/bakeoff
+license: MIT
+ghc-options: [-Wall, -Werror]
+dependencies:
+  - base >= 4.18 && < 5
+  - containers
+library:
+  source-dirs: src
+executables:
+  capability-dsl:
+    main: Main.hs
+    source-dirs: app
+    dependencies: [capability-dsl]
+tests:
+  capability-dsl-test:
+    main: Spec.hs
+    source-dirs: test
+    dependencies: [capability-dsl]

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e7">
+  <meta name="description" content="Mesa 40: inspectable Spanish restaurant speaking drills.">
+  <title>Mesa 40 — Say it, see the gap</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header>
+    <a class="brand" href="/"><span class="mark">M</span><span><strong>Mesa</strong> 40</span></a>
+    <div class="header-actions">
+      <span class="status" id="voiceState"><i></i> voice optional</span>
+      <button class="button quiet" id="connectVoice" type="button">Connect OpenAI voice</button>
+      <button class="button dark" id="runDemo" type="button">Run 60-second demo</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">Restaurant Spanish · one bounded pack</p><h1>Say it. <em>See the gap.</em></h1></div>
+      <p class="lede">Forty phrases known before you speak. The voice models; readable string rules decide what needs another rep.</p>
+    </section>
+
+    <section class="workspace" aria-label="Spanish speaking drill">
+      <aside class="rail">
+        <p class="eyebrow">Current rep</p>
+        <div class="metric"><span>POSITION</span><strong id="repCount">01 / 10</strong></div>
+        <div class="metric"><span>CLEAN</span><strong id="cleanCount">0</strong></div>
+        <div class="metric"><span>RECYCLED</span><strong id="recycleCount">0</strong></div>
+        <div class="rail-rule"></div>
+        <label class="toggle-row">
+          <input id="sceneMode" type="checkbox">
+          <span class="toggle" aria-hidden="true"></span>
+          <span><b>Waiter scene</b><small>Optional Realtime replies. Never scores.</small></span>
+        </label>
+        <div class="rail-note"><span>No black box</span><p>Target, accepted variants, edit distance, threshold, and named traps all live in ordinary Go.</p></div>
+      </aside>
+
+      <article class="drill-card">
+        <div class="card-topline"><span id="phraseNumber">PHRASE 01</span><span id="category">ARRIVING</span></div>
+        <div class="prompt-block">
+          <p id="english">a table for two, please</p>
+          <h2 id="target" lang="es">una mesa para dos, por favor</h2>
+          <button class="listen-button" id="hearPhrase" type="button"><span>▶</span> Hear it</button>
+        </div>
+
+        <div class="attempt-block">
+          <div class="attempt-heading"><span>Your attempt</span><span id="recognitionState">ready</span></div>
+          <div class="attempt-controls">
+            <button class="mic" id="speak" type="button"><span class="mic-icon" aria-hidden="true"></span><b>Speak<br>Spanish</b></button>
+            <span class="or">or type what the browser heard</span>
+            <form id="attemptForm"><label class="sr-only" for="attempt">Attempt transcript</label><input id="attempt" autocomplete="off"><button class="submit" type="submit" aria-label="Score attempt">→</button></form>
+          </div>
+        </div>
+
+        <section class="result hidden" id="result" aria-live="polite">
+          <div class="result-head"><div><span id="resultLabel">CLEAN READ</span><strong id="score">100%</strong></div><button class="button" id="next" type="button">Next phrase</button></div>
+          <div class="diff" id="diff"></div>
+          <div class="traps" id="traps"></div>
+        </section>
+      </article>
+
+      <aside class="history-panel">
+        <div class="panel-title"><span>SESSION HISTORY</span><button id="restart" type="button">Restart</button></div>
+        <div class="history empty" id="history"><p>Your scored attempts will appear here.</p></div>
+        <div class="tomorrow hidden" id="tomorrow"><span>TOMORROW'S 10</span><strong id="tomorrowCount">10 phrases</strong><p>Misses first, then unseen phrases. No account or streak required.</p></div>
+      </aside>
+    </section>
+  </main>
+  <footer><span>Education · Spanish restaurant pack</span><span>40 targets · visible rules · $7.99/month</span></footer>
+  <audio id="remoteAudio" autoplay></audio>
+  <script src="/app.js" defer></script>
+</body>
+</html>

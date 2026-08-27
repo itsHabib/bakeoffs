@@ -1,0 +1,10 @@
+{
+  "labels": ["SECURITY", "BUG", "STYLE"],
+  "lines": [
+    "SQL query built via string concatenation with user input",
+    "variable name l is unclear",
+    "nil map write will panic at runtime",
+    "tabs vs spaces inconsistent in this block"
+  ],
+  "planted": {"0": "SECURITY", "2": "BUG"}
+}

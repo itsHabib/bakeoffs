@@ -1,0 +1,15 @@
+{
+  "repos": [
+    { "name": "roxiq", "open_prs": [14, 40], "merged": [12, 13] },
+    { "name": "dossier", "open_prs": [7], "merged": [5, 6] },
+    { "name": "ship", "open_prs": [], "merged": [21, 22] }
+  ],
+  "services": [
+    { "name": "checkout", "versions": { "staging": "v13", "production": "v12" }, "prev_prod": "v11" },
+    { "name": "gateway", "versions": { "staging": "v8", "production": "v8" } }
+  ],
+  "flags": [
+    { "name": "dark-mode", "on": false },
+    { "name": "new-billing", "on": false }
+  ]
+}
