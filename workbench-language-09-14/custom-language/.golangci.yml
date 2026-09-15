@@ -1,0 +1,22 @@
+version: "2"
+linters:
+  enable:
+    - cyclop
+    - gocognit
+    - nestif
+    - revive
+  settings:
+    cyclop:
+      max-complexity: 12
+    gocognit:
+      min-complexity: 15
+    nestif:
+      min-complexity: 4
+    errcheck:
+      # Rendering to a writer and closing a file on an error path are
+      # deliberate; successful-path closes are returned and checked.
+      exclude-functions:
+        - fmt.Fprint
+        - fmt.Fprintf
+        - fmt.Fprintln
+        - (*os.File).Close

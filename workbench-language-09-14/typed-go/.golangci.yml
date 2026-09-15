@@ -1,0 +1,23 @@
+version: "2"
+
+# Standard linters plus the ones that enforce line-of-sight and shallow
+# nesting (no else chains, at most two levels per scope).
+linters:
+  enable:
+    - cyclop
+    - gocognit
+    - nestif
+    - revive
+  settings:
+    cyclop:
+      max-complexity: 12
+    gocognit:
+      min-complexity: 15
+    nestif:
+      min-complexity: 4
+    errcheck:
+      # Terminal output: a failed write to stdout/stderr is not actionable.
+      exclude-functions:
+        - fmt.Fprint
+        - fmt.Fprintf
+        - fmt.Fprintln

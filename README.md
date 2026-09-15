@@ -109,6 +109,18 @@ usefulness outside the demo and a language choice that changes the design.
 | [flow-state-lab](practical-systems-08-10/flow-state-lab) | Quint | model-check a CAM-to-factory handoff and export failure traces as ordinary regression fixtures | built |
 | [durable-pipeline-kernel](practical-systems-08-10/durable-pipeline-kernel) | Gleam | resume evidence-gated shipping and maintenance loops without rebuilding a workflow platform | graduated → repair-loop-kernel (not published) |
 
+### `workbench-language-09-14/` — plan/apply representation for agent infrastructure
+
+Three Go POCs compared HCL, a purpose-built language, and a typed API against
+direct tools on the same six-case workload. All worked; the review found that
+the durable value was the plan/evidence boundary rather than the syntax.
+
+| entry | the bet | status |
+|---|---|---|
+| [hcl](workbench-language-09-14/hcl) | familiar hand-edited configuration | reference |
+| [custom-language](workbench-language-09-14/custom-language) | `keep`/`run` lifecycle syntax | rejected |
+| [typed-go](workbench-language-09-14/typed-go) | programmer composition without a parser | reference |
+
 ## Folder anatomy
 
 Every category folder is self-judging and self-describing:

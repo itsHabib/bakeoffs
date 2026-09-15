@@ -1,0 +1,4 @@
+# Local build output and scratch workspaces; nothing here is source.
+/bin/
+/ws/
+*.plan.local.json

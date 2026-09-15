@@ -1,0 +1,7 @@
+# build outputs and demo leftovers
+/bin/
+*.test
+*.out
+/ws/
+/plans/
+.wb/
