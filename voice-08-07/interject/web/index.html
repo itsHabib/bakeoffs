@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>interject</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <h1>interject</h1>
+    <p>it listens continuously, and is allowed to speak <span id="allowance">3 times</span> per window</p>
+  </div>
+  <div class="budget">
+    <div class="pips" id="pips"></div>
+    <div class="budget-meta"><span id="budgetLabel">3 left</span><span id="resetLabel"></span></div>
+  </div>
+</header>
+
+<main>
+  <section class="panel chart-panel">
+    <div class="panel-head">
+      <h2>Interruption pressure</h2>
+      <div class="legend">
+        <span class="key pressure">pressure</span>
+        <span class="key bar">the bar</span>
+        <span class="key floor">floor</span>
+      </div>
+    </div>
+    <canvas id="chart"></canvas>
+    <div class="readout">
+      <div class="stat"><b id="pressureValue">0</b><small>pressure</small></div>
+      <div class="stat"><b id="thresholdValue">56</b><small>the bar</small></div>
+      <div class="stat wide"><b id="verdictLine" class="verdict">holding</b><small id="modelLine">—</small></div>
+      <div class="stat"><b id="thinkingDot" class="dot">idle</b><small>classifier</small></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>What it heard</h2><button id="resetBtn" class="ghost">reset window</button></div>
+    <div id="transcript" class="scroll transcript"></div>
+    <form id="typeForm" class="type">
+      <input id="typeInput" placeholder="type a line and press enter…" autocomplete="off">
+    </form>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Spent turns</h2></div>
+    <div id="log" class="scroll log">
+      <p class="empty">Nothing yet. Silence is the default — that's the point.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <button id="micBtn" class="primary">🎙 Start listening</button>
+  <button id="rehearseBtn" class="secondary">▶ Run the rehearsal</button>
+  <label class="mute"><input type="checkbox" id="speakOut" checked> speak out loud</label>
+  <span id="status" class="status"></span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

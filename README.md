@@ -37,6 +37,7 @@ Web Speech + local Ollama. Birthplace of the house invariant —
 | [readback](voice-08-07/readback) | irreversible ops actions gated by a spoken readback (voice as a merge/confirm gate) | built |
 | [partyline](voice-08-07/partyline) | monitor an agent fleet *by ear* via 2-second brevity calls | built |
 | [tutor](voice-08-07/tutor) | interject's rationed-interruption engine transplanted to tutoring | built |
+| [interject](voice-08-07/interject) | the rationed-interruption listener that supplied the wave's core mechanism | reference precursor |
 
 ### `voice-08-08/` — consumer voice, would-someone-pay wave (Aug 8 2026)
 Same domain, higher bar: real `OpenAI Realtime` conversational voice (browser
@@ -120,6 +121,19 @@ the durable value was the plan/evidence boundary rather than the syntax.
 | [hcl](workbench-language-09-14/hcl) | familiar hand-edited configuration | reference |
 | [custom-language](workbench-language-09-14/custom-language) | `keep`/`run` lifecycle syntax | rejected |
 | [typed-go](workbench-language-09-14/typed-go) | programmer composition without a parser | reference |
+
+### `resume-09-05/` — restartable work after a worker dies
+
+Three implementations tested recovery across real process termination, lost
+acknowledgements, stale worker messages, and changed evidence. The common limit
+was more valuable than a winner: an opaque effect without a query or retained
+receipt must remain unresolved.
+
+| entry | approach | status |
+|---|---|---|
+| [plain-go](resume-09-05/plain-go) | explicit state machine and journal | baseline |
+| [warrant](resume-09-05/warrant-entry) | evidence-aware reducer plus recovery adapter | reference |
+| [parley](resume-09-05/parley) | protocol observer plus ordinary executor | reference |
 
 ## Folder anatomy
 

@@ -1,0 +1,9 @@
+ea52812efd05ef3f0bbab238b6147639dde67fbba343dfbf595fa910801327e4  ../warrant/action.go
+232f22a5d800a03d094edfa5a77cf2ee00d0dbc72bbb8f69460a3a9c820876af  ../warrant/event.go
+cacc9ed34cc3accf6156dbc7cd85ae548280672b2845573af9442a829517ecc8  ../warrant/pipeline.go
+24c69919f145c70756b70770d3ca9a09fba5063d76a3318fd39fd7fe7828e46a  ../warrant/reduce.go
+fc2ed106bd9c603710ff181a0649cbf14e2254a92c310801714165c51548da5e  ../warrant/view.go
+6a5a50462166511e82cea481b69d25a63fb27ba5a5ab6f44d9969d7c290eafdf  ../warrant/runner.go
+f308b9e3b92085b4e1161098ba2ee1ec6b633ef86fdcfe6f57f4c18bc40ba3ff  ../warrant/go.mod
+35bd62d71096020593e1155c80b620313ac929c12997715cbb48ee8009c4d856  ../warrant/runner_test.go
+58b0b40ab13bff29c3044c98bc8bf61ab219fa5a1bf947e517ca98b992b7bb1e  ../warrant/conformance_test.go

@@ -1,0 +1,19 @@
+{
+  "upstream": "github.com/itsHabib/parley",
+  "commit": "ef7cce0b7d5f197c0dfb1bd629724c3bfd98850a",
+  "license": "MIT; vendor/parley/LICENSE",
+  "adaptations": "None to reused source. Python journal-to-trace adapter lives in src/audit.py.",
+  "files": {
+    "LICENSE": "70d16354f07c1eb920459a293cf6fd8b7e1b1a24caa06b520cb6a055c9374b23",
+    "compiler/Makefile": "27411fd60621243fe3c910d8a88054a2811209e7e6010e2e46e93e2866799fd0",
+    "compiler/app/Main.hs": "4915a7d3ad9187b44b0b7c8e54869200c6d6da51fc3d7904116237d73a53a097",
+    "compiler/src/Emit.hs": "d125c2d56d4c2626522987f2512c7d050121b09ff3b5f1a5593a6ca18578efb3",
+    "compiler/src/Example.hs": "99135a901a9f688e8165032bf0fb828e76e532b44f99f53bf1d4c6e45bf77f89",
+    "compiler/src/Observe.hs": "3d74420a2a5d2fcb37d40665cc97e0abf5471e79cd6441b5ffe7bc891a30bfa1",
+    "compiler/src/Parse.hs": "645984f3644e79112fb9d8785a68687d4f3d69d26226e33cb66d2445de8181a7",
+    "compiler/src/Protocol.hs": "2af2e4db51b9c8df1ae4f81df989da0fe2308b3ef6438c889c5baf3cc6a77efa",
+    "compiler/test/Spec.hs": "25d8c793584d8376bd7d66c0520185a1ada39478ff847f3e8ebb07b5ecc69089",
+    "protocols/evidence-pipeline.parley": "7933fd851acfa4fe37b1486a88b8c12c40b2e6a1f4f2ba8a83cc4d5dd8365fa8",
+    "protocols/gate-run.parley": "e91e60c614219b72bc1646b63f6c72145b6ed677354d6ee3716c9b3a224f0985"
+  }
+}

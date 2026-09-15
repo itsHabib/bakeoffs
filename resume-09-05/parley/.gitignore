@@ -1,0 +1,4 @@
+__pycache__/
+vendor/parley/compiler/build/
+vendor/parley/compiler/bin/
+artifacts/

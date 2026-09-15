@@ -1,0 +1,9 @@
+protocol restartable-delivery
+roles worker checker recorder
+
+worker -> checker: candidate.ready
+checker -> worker: candidate.checked
+checker -> recorder: negative.detected
+worker -> recorder: delivery.intent
+recorder -> worker: delivery.receipt
+worker -> recorder: completed
