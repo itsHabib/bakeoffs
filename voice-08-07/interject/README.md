@@ -79,7 +79,7 @@ ollama serve && ollama pull qwen2.5:7b
 ```
 
 ```bash
-go run . 
+go run .
 ```
 
 Open http://127.0.0.1:8722. **Run the rehearsal** replays a canned monologue so
