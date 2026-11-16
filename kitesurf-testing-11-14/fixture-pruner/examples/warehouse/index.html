@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Warehouse reorder</title><style>body{font:16px/1.6 system-ui;background:#f1f3ee;color:#1c312c;margin:60px auto;padding:24px;max-width:720px}main{padding:32px;background:white;border:1px solid #d7e0d7}li{padding:16px;border-bottom:1px solid #d7e0d7}small{color:#50665c}</style><small>OPERATIONS / INVENTORY</small><main><h1 id="location">Loading warehouse</h1><p id="summary"></p><ul id="queue"></ul><p id="error" role="alert"></p></main><script>
+fetch('/api/stock').then(function(response){return response.json()}).then(function(data){
+  document.querySelector('#location').textContent=data.warehouse.name;
+  var count=0;
+  data.products.forEach(function(product){
+    if(product.stock<product.target){var row=document.createElement('li');row.className='reorder';row.textContent=product.name+' · order '+(product.target-product.stock);document.querySelector('#queue').appendChild(row);count++}
+  });
+  document.querySelector('#summary').textContent=count+' SKU needs attention';
+}).catch(function(error){document.querySelector('#error').textContent=String(error)}).then(function(){var ready=document.createElement('span');ready.id='ready';document.body.appendChild(ready)});
+</script></html>

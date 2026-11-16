@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Needle · Quote race</title>
+<style>body{font:18px system-ui;max-width:760px;margin:70px auto;padding:0 25px;color:#332a43;background:#f7f4fa}h1{font-size:46px;letter-spacing:-2px}label{display:block;margin-top:25px}input,button{font:inherit;padding:12px;border:1px solid #c1b2cf;border-radius:7px}button{cursor:pointer;background:#eee6f5}article{padding:25px;border:1px solid #c1b2cf;border-radius:12px;margin-top:28px;background:white}.tag{font:13px monospace;color:#79558d}</style>
+<p class="tag">NEEDLE / REPRODUCTION WORKLOAD 02</p><h1>The wrong quantity’s quote.</h1><p>Changing quantity twice can leave an older server quote on screen.</p>
+<label for="quantity">Seats</label><input id="quantity" type="number" value="1"><button id="help">Show help</button><p id="hint"></p>
+<article id="quote" data-quantity="1">$20 for 1 seat</article><p id="mode"></p>
+<script>
+const fixed = location.search.includes('fixed=1');
+document.querySelector('#mode').textContent = fixed ? 'Fixed control: versioned quotes.' : 'Broken control: unversioned quotes.';
+document.querySelector('#help').addEventListener('click', () => {document.querySelector('#hint').textContent = 'Every seat costs $20.';});
+let generation = 0;
+document.querySelector('#quantity').addEventListener('input', async event => {
+  const quantity = event.target.value;
+  const version = ++generation;
+  const data = await fetch('/api/quote?quantity=' + quantity).then(response => response.json());
+  if (fixed && version !== generation) return;
+  document.querySelector('#quote').textContent = '$' + data.total + ' for ' + quantity + ' seats';
+  document.querySelector('#quote').setAttribute('data-quantity', quantity);
+});
+</script></html>

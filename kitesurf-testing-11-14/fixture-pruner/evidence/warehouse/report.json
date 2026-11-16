@@ -1,0 +1,5504 @@
+{
+  "name": "Warehouse · reorder queue",
+  "timestamp": "2026-11-15T04:01:30.838Z",
+  "engine": {
+    "Browser": "Kitesurf/0.0.1",
+    "Protocol-Version": "1.3",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "V8-Version": "12.0.0",
+    "WebKit-Version": "537.36",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:18891/devtools/browser"
+  },
+  "engineRevision": "4a2903813a22b08d4f3cc64a4b35339d0293a5d1",
+  "sourceSha256": "cf00c32bb454a1b3f3f887cbac93ecde219f682f97b2dc4dd42e272e3019022a",
+  "contract": [
+    {
+      "selector": "#location",
+      "text": "East depot"
+    },
+    {
+      "selector": ".reorder",
+      "count": 1
+    },
+    {
+      "selector": "#queue",
+      "text": "Cable ties · order 25"
+    },
+    {
+      "selector": "#summary",
+      "text": "1 SKU needs attention"
+    }
+  ],
+  "checkCount": 4,
+  "beforeBytes": 561,
+  "afterBytes": 95,
+  "fixture": {
+    "warehouse": {
+      "name": "East depot"
+    },
+    "products": [
+      {
+        "name": "Cable ties",
+        "stock": 5,
+        "target": 30
+      },
+      {}
+    ]
+  },
+  "attempts": [
+    {
+      "path": "/requestId",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/id",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/address",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/manager",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/sku",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/unitCost",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/vendor",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/1/sku",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/1/name",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/1/stock",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/1/target",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/1/unitCost",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/1/vendor",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/pagination",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/audit",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "complete": true,
+  "runs": 89,
+  "baseline": {
+    "pass": true,
+    "checks": [
+      {
+        "selector": "#location",
+        "text": "East depot",
+        "actual": {
+          "count": 1,
+          "text": "East depot",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": ".reorder",
+        "count": 1,
+        "actual": {
+          "count": 1,
+          "text": "Cable ties · order 25",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#queue",
+        "text": "Cable ties · order 25",
+        "actual": {
+          "count": 1,
+          "text": "Cable ties · order 25",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#summary",
+        "text": "1 SKU needs attention",
+        "actual": {
+          "count": 1,
+          "text": "1 SKU needs attention",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      }
+    ],
+    "errors": []
+  },
+  "finalCheck": {
+    "pass": true,
+    "checks": [
+      {
+        "selector": "#location",
+        "text": "East depot",
+        "actual": {
+          "count": 1,
+          "text": "East depot",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": ".reorder",
+        "count": 1,
+        "actual": {
+          "count": 1,
+          "text": "Cable ties · order 25",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#queue",
+        "text": "Cable ties · order 25",
+        "actual": {
+          "count": 1,
+          "text": "Cable ties · order 25",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#summary",
+        "text": "1 SKU needs attention",
+        "actual": {
+          "count": 1,
+          "text": "1 SKU needs attention",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      }
+    ],
+    "errors": []
+  },
+  "controls": [
+    {
+      "path": "/warehouse",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "Loading warehouse",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"Loading warehouse\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": [],
+      "file": "controls/01.json"
+    },
+    {
+      "path": "/warehouse/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"East depot\", got \"\""
+          ]
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "Cable ties · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": [],
+      "file": "controls/02.json"
+    },
+    {
+      "path": "/products",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"\""
+          ]
+        }
+      ],
+      "errors": [],
+      "file": "controls/03.json"
+    },
+    {
+      "path": "/products/0/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "undefined · order 25",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"undefined · order 25\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "1 SKU needs attention",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": [],
+      "file": "controls/04.json"
+    },
+    {
+      "path": "/products/0/stock",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": [],
+      "file": "controls/05.json"
+    },
+    {
+      "path": "/products/0/target",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#location",
+          "text": "East depot",
+          "actual": {
+            "count": 1,
+            "text": "East depot",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": ".reorder",
+          "count": 1,
+          "actual": {
+            "count": 0,
+            "text": "",
+            "disabled": null
+          },
+          "pass": false,
+          "failures": [
+            "Expected 1 element(s), got 0"
+          ]
+        },
+        {
+          "selector": "#queue",
+          "text": "Cable ties · order 25",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Cable ties · order 25\", got \"\""
+          ]
+        },
+        {
+          "selector": "#summary",
+          "text": "1 SKU needs attention",
+          "actual": {
+            "count": 1,
+            "text": "0 SKU needs attention",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"1 SKU needs attention\", got \"0 SKU needs attention\""
+          ]
+        }
+      ],
+      "errors": [],
+      "file": "controls/06.json"
+    }
+  ]
+}

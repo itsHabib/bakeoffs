@@ -1,0 +1,21 @@
+{
+  "name":"Checkout: the wrong total still passes", "app":"app", "ready":"[data-ready=yes]",
+  "steps":[{"action":"click","selector":"#quote"}],
+  "routes":[{"path":"api/quote","body":{"totalCents":4900,"currency":"USD","trace":"local"}},{"path":"api/discount","body":{"percent":10}}],
+  "faults":[
+    {"id":"tenfold-total","route":"api/quote","pointer":"/totalCents","value":49000,"witness":"#total","why":"A cents conversion regression charges ten times the intended total."},
+    {"id":"wrong-currency","route":"api/quote","pointer":"/currency","value":"EUR","witness":"#total","why":"The customer sees a quote in the wrong currency."},
+    {"id":"unused-metadata","route":"api/quote","pointer":"/trace","value":"mutated","witness":"#total","why":"Negative control: changing internal metadata does not change the total."},
+    {"id":"unvisited-discount","route":"api/discount","pointer":"/percent","value":99,"witness":"#total","why":"Negative control: this journey never requests the discount endpoint."}
+  ],
+  "suites":{
+    "smoke":[{"selector":"#status","op":"equals","value":"Quote ready"},{"selector":"#total","op":"exists"}],
+    "behavior":[{"selector":"#status","op":"equals","value":"Quote ready"},{"selector":"#total","op":"equals","value":"USD 49.00"}]
+  },
+  "expected":{
+    "tenfold-total":{"smoke":"survived","behavior":"detected"},
+    "wrong-currency":{"smoke":"survived","behavior":"detected"},
+    "unused-metadata":{"smoke":"no-observed-change","behavior":"no-observed-change"},
+    "unvisited-discount":{"smoke":"not-exercised","behavior":"not-exercised"}
+  }
+}

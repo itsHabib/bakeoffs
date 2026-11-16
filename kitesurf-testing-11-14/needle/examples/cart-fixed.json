@@ -1,0 +1,92 @@
+{
+  "name": "Cart quote belongs to the previous quantity",
+  "url": "http://127.0.0.1:8892/cart?fixed=1",
+  "oracle": {
+    "actual": {
+      "selector": "#quote",
+      "attribute": "data-quantity"
+    },
+    "expected": {
+      "selector": "#quantity",
+      "property": "value"
+    }
+  },
+  "events": [
+    {
+      "id": "open-help",
+      "kind": "click",
+      "selector": "#help"
+    },
+    {
+      "id": "warmup-input",
+      "kind": "fill",
+      "selector": "#quantity",
+      "value": "1"
+    },
+    {
+      "id": "warmup-result",
+      "kind": "respond",
+      "url": "/api/quote?quantity=1",
+      "body": {
+        "total": 20
+      },
+      "requires": [
+        "warmup-input"
+      ]
+    },
+    {
+      "id": "toggle-view",
+      "kind": "click",
+      "selector": "#help"
+    },
+    {
+      "id": "older-request",
+      "kind": "fill",
+      "selector": "#quantity",
+      "value": "2"
+    },
+    {
+      "id": "help-again",
+      "kind": "click",
+      "selector": "#help"
+    },
+    {
+      "id": "current-request",
+      "kind": "fill",
+      "selector": "#quantity",
+      "value": "8"
+    },
+    {
+      "id": "current-response",
+      "kind": "respond",
+      "url": "/api/quote?quantity=8",
+      "body": {
+        "total": 160
+      },
+      "requires": [
+        "current-request"
+      ]
+    },
+    {
+      "id": "toggle-after-result",
+      "kind": "click",
+      "selector": "#help"
+    },
+    {
+      "id": "stale-response",
+      "kind": "respond",
+      "url": "/api/quote?quantity=2",
+      "body": {
+        "total": 40
+      },
+      "requires": [
+        "older-request"
+      ]
+    },
+    {
+      "id": "final-help",
+      "kind": "click",
+      "selector": "#help"
+    }
+  ]
+}

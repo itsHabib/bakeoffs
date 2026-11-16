@@ -1,0 +1,10 @@
+node_modules/
+artifacts/*.tmp
+
+.env
+.env.*
+*.pem
+*.key
+credentials*
+secrets/
+coverage/

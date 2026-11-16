@@ -1,0 +1,10 @@
+{
+  "invoice": {
+    "reference": "INV-1042",
+    "customer": {},
+    "amountCents": 248000,
+    "currency": "USD",
+    "status": "overdue",
+    "canApprove": true
+  }
+}

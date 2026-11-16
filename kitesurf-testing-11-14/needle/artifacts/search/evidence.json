@@ -1,0 +1,364 @@
+{
+  "name": "Search results regress after typing",
+  "started": "2026-11-15T04:00:52.234Z",
+  "completed": "2026-11-15T04:01:11.480Z",
+  "endpoint": "ws://127.0.0.1:18892/devtools/browser",
+  "engine": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/145.0.0.0",
+    "revision": "@kitesurf",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "jsVersion": "12.0.0"
+  },
+  "revision": "4a2903813a22b08d4f3cc64a4b35339d0293a5d1",
+  "baseline": {
+    "status": "fail",
+    "actual": "ca",
+    "expected": "cats"
+  },
+  "final": {
+    "status": "fail",
+    "actual": "ca",
+    "expected": "cats"
+  },
+  "originalCount": 11,
+  "reducedCount": 4,
+  "attempts": [
+    {
+      "events": [
+        "current-request",
+        "current-response",
+        "toggle-after-result",
+        "final-help"
+      ],
+      "status": "pass",
+      "actual": "cats",
+      "expected": "cats"
+    },
+    {
+      "events": [
+        "open-help",
+        "warmup-input",
+        "warmup-result",
+        "toggle-view",
+        "older-request",
+        "help-again"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    },
+    {
+      "events": [
+        "toggle-view",
+        "older-request",
+        "help-again",
+        "current-request",
+        "current-response",
+        "toggle-after-result",
+        "stale-response",
+        "final-help"
+      ],
+      "status": "fail",
+      "actual": "ca",
+      "expected": "cats"
+    },
+    {
+      "events": [
+        "toggle-view",
+        "older-request",
+        "help-again",
+        "stale-response",
+        "final-help"
+      ],
+      "status": "pass",
+      "actual": "ca",
+      "expected": "ca"
+    },
+    {
+      "events": [
+        "toggle-view",
+        "older-request",
+        "help-again",
+        "current-request",
+        "current-response",
+        "toggle-after-result"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    },
+    {
+      "events": [
+        "help-again",
+        "current-request",
+        "current-response",
+        "toggle-after-result",
+        "final-help"
+      ],
+      "status": "pass",
+      "actual": "cats",
+      "expected": "cats"
+    },
+    {
+      "events": [
+        "toggle-view",
+        "older-request",
+        "toggle-after-result",
+        "stale-response",
+        "final-help"
+      ],
+      "status": "pass",
+      "actual": "ca",
+      "expected": "ca"
+    },
+    {
+      "events": [
+        "toggle-view",
+        "older-request",
+        "help-again",
+        "current-request",
+        "stale-response",
+        "final-help"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    },
+    {
+      "events": [
+        "older-request",
+        "help-again",
+        "current-request",
+        "current-response",
+        "toggle-after-result",
+        "stale-response",
+        "final-help"
+      ],
+      "status": "fail",
+      "actual": "ca",
+      "expected": "cats"
+    },
+    {
+      "events": [
+        "older-request",
+        "current-request",
+        "current-response",
+        "toggle-after-result",
+        "stale-response",
+        "final-help"
+      ],
+      "status": "fail",
+      "actual": "ca",
+      "expected": "cats"
+    },
+    {
+      "events": [
+        "older-request",
+        "toggle-after-result",
+        "stale-response",
+        "final-help"
+      ],
+      "status": "pass",
+      "actual": "ca",
+      "expected": "ca"
+    },
+    {
+      "events": [
+        "older-request",
+        "current-request",
+        "toggle-after-result",
+        "stale-response",
+        "final-help"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    },
+    {
+      "events": [
+        "older-request",
+        "current-request",
+        "current-response",
+        "stale-response",
+        "final-help"
+      ],
+      "status": "fail",
+      "actual": "ca",
+      "expected": "cats"
+    },
+    {
+      "events": [
+        "current-request",
+        "current-response",
+        "final-help"
+      ],
+      "status": "pass",
+      "actual": "cats",
+      "expected": "cats"
+    },
+    {
+      "events": [
+        "older-request",
+        "stale-response",
+        "final-help"
+      ],
+      "status": "pass",
+      "actual": "ca",
+      "expected": "ca"
+    },
+    {
+      "events": [
+        "older-request",
+        "current-request",
+        "stale-response",
+        "final-help"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    },
+    {
+      "events": [
+        "older-request",
+        "current-request",
+        "current-response",
+        "final-help"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    },
+    {
+      "events": [
+        "older-request",
+        "current-request",
+        "current-response",
+        "stale-response"
+      ],
+      "status": "fail",
+      "actual": "ca",
+      "expected": "cats"
+    },
+    {
+      "events": [
+        "current-request",
+        "current-response"
+      ],
+      "status": "pass",
+      "actual": "cats",
+      "expected": "cats"
+    },
+    {
+      "events": [
+        "older-request",
+        "stale-response"
+      ],
+      "status": "pass",
+      "actual": "ca",
+      "expected": "ca"
+    },
+    {
+      "events": [
+        "older-request",
+        "current-request",
+        "stale-response"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    },
+    {
+      "events": [
+        "older-request",
+        "current-request",
+        "current-response"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    },
+    {
+      "events": [
+        "current-request",
+        "current-response"
+      ],
+      "status": "pass",
+      "actual": "cats",
+      "expected": "cats"
+    },
+    {
+      "events": [
+        "older-request",
+        "stale-response"
+      ],
+      "status": "pass",
+      "actual": "ca",
+      "expected": "ca"
+    },
+    {
+      "events": [
+        "older-request",
+        "current-request",
+        "stale-response"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    },
+    {
+      "events": [
+        "older-request",
+        "current-request",
+        "current-response"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    },
+    {
+      "events": [
+        "older-request",
+        "current-request",
+        "current-response",
+        "stale-response"
+      ],
+      "status": "fail",
+      "actual": "ca",
+      "expected": "cats"
+    }
+  ],
+  "witnesses": [
+    {
+      "removed": "older-request",
+      "retained": [
+        "current-request",
+        "current-response"
+      ],
+      "status": "pass",
+      "actual": "cats",
+      "expected": "cats"
+    },
+    {
+      "removed": "current-request",
+      "retained": [
+        "older-request",
+        "stale-response"
+      ],
+      "status": "pass",
+      "actual": "ca",
+      "expected": "ca"
+    },
+    {
+      "removed": "current-response",
+      "retained": [
+        "older-request",
+        "current-request",
+        "stale-response"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    },
+    {
+      "removed": "stale-response",
+      "retained": [
+        "older-request",
+        "current-request",
+        "current-response"
+      ],
+      "status": "unresolved",
+      "reason": "1 fetch request(s) remain undelivered"
+    }
+  ],
+  "guarantee": "Each single event deletion, including dependent closure, was tested twice and did not consistently reproduce the exact mismatch in both runs. Unresolved witnesses do not establish semantic necessity; unstable witnesses are inconclusive."
+}

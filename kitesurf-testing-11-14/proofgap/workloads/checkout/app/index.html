@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Northline checkout</title><style>body{font:18px system-ui;background:#f7f3eb;color:#203c31;margin:60px auto;max-width:600px;padding:20px}h1{font-size:40px}button{padding:14px 22px;background:#224e3c;color:white;border:0;border-radius:6px;font:inherit}article{background:white;padding:28px;border-radius:12px}#total{font-size:32px;font-weight:bold}</style><body><p>NORTHLINE / FIELD GOODS</p><h1>Review your order</h1><article><p>Trail lantern × 1</p><button id="quote">Calculate total</button><p id="status">Ready to calculate</p><p id="total"></p></article><script>
+document.querySelector('#quote').addEventListener('click',async function(){
+ const quote=await (await fetch('api/quote')).json();
+ document.querySelector('#total').textContent=quote.currency+' '+(quote.totalCents/100).toFixed(2);
+ document.querySelector('#status').textContent='Quote ready';
+ document.querySelector('article').setAttribute('data-ready','yes');
+});
+</script></body></html>

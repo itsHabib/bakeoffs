@@ -1,0 +1,15 @@
+{
+  "name": "Invoice approval · overdue customer",
+  "appDir": ".",
+  "fixture": "response.json",
+  "apiPath": "/api/invoices",
+  "ready": "#ready",
+  "maxRuns": 160,
+  "checks": [
+    { "selector": "#customer", "text": "Northstar Studio" },
+    { "selector": "#total", "text": "$2,480.00" },
+    { "selector": "#status", "text": "Overdue · approval required" },
+    { "selector": "#approve", "disabled": false },
+    { "selector": "#reference", "text": "INV-1042" }
+  ]
+}

@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Parcel delivery estimate</title><style>body{font:18px system-ui;margin:60px auto;padding:20px;max-width:600px;color:#213852}input,button{font:inherit;padding:12px}button{background:#213852;color:white;border:0}#fee{font-size:32px}</style><body><h1>Plan a delivery</h1><label>Parcel weight (kg) <input id="weight" type="number" value="1"></label><button id="estimate">Estimate</button><p id="status">Enter a weight</p><p id="fee"></p><p id="eta"></p><script>
+document.querySelector('#estimate').addEventListener('click',async function(){
+ const rate=await (await fetch('api/rates')).json();
+ const fee=rate.baseCents+Number(document.querySelector('#weight').value)*rate.perKgCents;
+ document.querySelector('#fee').textContent='USD '+(fee/100).toFixed(2);
+ document.querySelector('#eta').textContent=rate.days+' business days';
+ document.querySelector('#status').textContent='Estimate ready';
+ document.body.setAttribute('data-ready','yes');
+});
+</script></body></html>

@@ -1,0 +1,11 @@
+{
+  "invoice": {
+    "reference": "INV-1042",
+    "customer": {
+      "name": "Northstar Studio"
+    },
+    "currency": "USD",
+    "status": "overdue",
+    "canApprove": true
+  }
+}

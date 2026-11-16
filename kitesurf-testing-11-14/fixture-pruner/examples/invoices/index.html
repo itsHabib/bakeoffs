@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Northstar · Approval desk</title><style>body{font:16px/1.6 system-ui;background:#f1f3ee;color:#1c312c;margin:60px auto;padding:24px;max-width:720px}main{padding:32px;background:white;border:1px solid #d7e0d7}h1{font-size:28px}#total{font-size:42px;font-weight:700}button{background:#24694e;color:white;border:0;padding:14px 24px;font:inherit}button:disabled{opacity:.5}small{color:#50665c}</style><small>ACCOUNTS RECEIVABLE / APPROVAL DESK</small><main><p id="reference">Loading invoice</p><h1 id="customer"></h1><p id="total"></p><p id="status"></p><button id="approve" disabled>Approve payment plan</button><p id="error" role="alert"></p></main><script>
+fetch('/api/invoices').then(function(response){return response.json()}).then(function(data){
+  var invoice=data.invoice;
+  document.querySelector('#reference').textContent=invoice.reference;
+  document.querySelector('#customer').textContent=invoice.customer.name;
+  document.querySelector('#total').textContent=invoice.currency==='USD'?'$'+(invoice.amountCents/100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','):'Unsupported currency';
+  document.querySelector('#status').textContent=invoice.status==='overdue'?'Overdue · approval required':'No action required';
+  if(invoice.canApprove===true)document.querySelector('#approve').removeAttribute('disabled');
+}).catch(function(error){document.querySelector('#error').textContent=String(error)}).then(function(){var ready=document.createElement('span');ready.id='ready';document.body.appendChild(ready)});
+</script></html>

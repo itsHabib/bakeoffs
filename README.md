@@ -135,6 +135,16 @@ receipt must remain unresolved.
 | [warrant](resume-09-05/warrant-entry) | evidence-aware reducer plus recovery adapter | reference |
 | [parley](resume-09-05/parley) | protocol observer plus ordinary executor | reference |
 
+### `kitesurf-testing-11-14/` — browser-driven fixture and test tools (Nov 14 2026)
+
+Three runnable prototypes with synthetic workloads and real local Kitesurf verification. See [setup and results](kitesurf-testing-11-14/).
+
+| entry | the job | status |
+|---|---|---|
+| [fixture-pruner](kitesurf-testing-11-14/fixture-pruner) | shrink JSON mocks while preserving explicit UI checks | built, unjudged |
+| [needle](kitesurf-testing-11-14/needle) | reduce stale-response bugs to short executable reproductions | built, unjudged |
+| [proofgap](kitesurf-testing-11-14/proofgap) | expose assertions that miss visibly wrong API-derived output | built, unjudged |
+
 ## Folder anatomy
 
 Every category folder is self-judging and self-describing:

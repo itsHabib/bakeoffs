@@ -1,0 +1,10 @@
+{
+  "requestId": "warehouse-local-12",
+  "warehouse": { "id": "wh_east", "name": "East depot", "address": "2 Example Road", "manager": "Sample Person" },
+  "products": [
+    { "sku": "CT-25", "name": "Cable ties", "stock": 5, "target": 30, "unitCost": 0.25, "vendor": { "name": "Example Supplies", "email": "orders@example.test" } },
+    { "sku": "BOX-01", "name": "Shipping boxes", "stock": 50, "target": 20, "unitCost": 1.4, "vendor": { "name": "Example Packaging", "email": "hello@example.test" } }
+  ],
+  "pagination": { "page": 1, "total": 2, "hasMore": false },
+  "audit": { "lastSync": "2026-11-14T10:00:00Z", "source": "synthetic inventory" }
+}

@@ -1,0 +1,11 @@
+{
+ "name":"Shipping: a plausible estimate is not a correct estimate", "app":"app", "ready":"[data-ready=yes]",
+ "steps":[{"action":"fill","selector":"#weight","value":"3"},{"action":"click","selector":"#estimate"}],
+ "routes":[{"path":"api/rates","body":{"baseCents":500,"perKgCents":200,"days":3}}],
+ "faults":[{"id":"zero-weight-rate","route":"api/rates","pointer":"/perKgCents","value":0,"witness":"#fee","why":"Weight is silently omitted from the charge."},{"id":"late-delivery","route":"api/rates","pointer":"/days","value":30,"witness":"#eta","why":"The delivery commitment changes from three to thirty days."}],
+ "suites":{
+  "smoke":[{"selector":"#status","op":"equals","value":"Estimate ready"},{"selector":"#fee","op":"includes","value":"USD"}],
+  "behavior":[{"selector":"#fee","op":"equals","value":"USD 11.00"},{"selector":"#eta","op":"equals","value":"3 business days"}]
+ },
+ "expected":{"zero-weight-rate":{"smoke":"survived","behavior":"detected"},"late-delivery":{"smoke":"survived","behavior":"detected"}}
+}

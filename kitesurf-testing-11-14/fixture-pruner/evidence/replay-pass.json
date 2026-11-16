@@ -1,0 +1,61 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "selector": "#customer",
+      "text": "Northstar Studio",
+      "actual": {
+        "count": 1,
+        "text": "Northstar Studio",
+        "disabled": false
+      },
+      "pass": true,
+      "failures": []
+    },
+    {
+      "selector": "#total",
+      "text": "$2,480.00",
+      "actual": {
+        "count": 1,
+        "text": "$2,480.00",
+        "disabled": false
+      },
+      "pass": true,
+      "failures": []
+    },
+    {
+      "selector": "#status",
+      "text": "Overdue · approval required",
+      "actual": {
+        "count": 1,
+        "text": "Overdue · approval required",
+        "disabled": false
+      },
+      "pass": true,
+      "failures": []
+    },
+    {
+      "selector": "#approve",
+      "disabled": false,
+      "actual": {
+        "count": 1,
+        "text": "Approve payment plan",
+        "disabled": false
+      },
+      "pass": true,
+      "failures": []
+    },
+    {
+      "selector": "#reference",
+      "text": "INV-1042",
+      "actual": {
+        "count": 1,
+        "text": "INV-1042",
+        "disabled": false
+      },
+      "pass": true,
+      "failures": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Warehouse · reorder queue",
+  "appDir": ".",
+  "fixture": "response.json",
+  "apiPath": "/api/stock",
+  "ready": "#ready",
+  "maxRuns": 160,
+  "checks": [
+    { "selector": "#location", "text": "East depot" },
+    { "selector": ".reorder", "count": 1 },
+    { "selector": "#queue", "text": "Cable ties · order 25" },
+    { "selector": "#summary", "text": "1 SKU needs attention" }
+  ]
+}

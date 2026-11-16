@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "name": "Shipping: a plausible estimate is not a correct estimate",
+  "createdAt": "2026-11-15T04:02:18.243Z",
+  "configSha256": "1b2d26fc2fef85acf389ca54167651af23b2fe619e44221edc35bd3e2b9e0983",
+  "endpoint": "ws://127.0.0.1:18893/devtools/browser",
+  "engine": {
+    "Browser": "Kitesurf/0.0.1",
+    "Protocol-Version": "1.3",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "V8-Version": "12.0.0",
+    "WebKit-Version": "537.36",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:18893/devtools/browser"
+  },
+  "engineRevision": "4a2903813a22b08d4f3cc64a4b35339d0293a5d1",
+  "revisionSource": "local checkout; not cryptographic runtime attestation",
+  "actions": "DOM click / input events via Runtime.evaluate",
+  "baseline": {
+    "snapshot": {
+      "#fee": "USD 11.00",
+      "#eta": "3 business days",
+      "#status": "Estimate ready"
+    },
+    "hits": [
+      {
+        "method": "GET",
+        "route": "api/rates",
+        "mutated": false,
+        "bodySha256": "84c20d2ba85ce51487d6b2eb02485b16a30538d76d55651b915f668dc28be997"
+      }
+    ],
+    "elapsedMs": 295,
+    "error": null
+  },
+  "summary": "smoke: 2 of 2 observed faults missed · behavior: 0 of 2 observed faults missed",
+  "results": [
+    {
+      "fault": {
+        "id": "zero-weight-rate",
+        "route": "api/rates",
+        "pointer": "/perKgCents",
+        "value": 0,
+        "witness": "#fee",
+        "why": "Weight is silently omitted from the charge."
+      },
+      "before": "USD 11.00",
+      "after": "USD 5.00",
+      "suites": {
+        "smoke": {
+          "status": "survived",
+          "checks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Estimate ready",
+              "actual": "Estimate ready",
+              "pass": true
+            },
+            {
+              "selector": "#fee",
+              "op": "includes",
+              "value": "USD",
+              "actual": "USD 5.00",
+              "pass": true
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Estimate ready",
+              "actual": "Estimate ready",
+              "pass": true
+            },
+            {
+              "selector": "#fee",
+              "op": "includes",
+              "value": "USD",
+              "actual": "USD 11.00",
+              "pass": true
+            }
+          ]
+        },
+        "behavior": {
+          "status": "detected",
+          "checks": [
+            {
+              "selector": "#fee",
+              "op": "equals",
+              "value": "USD 11.00",
+              "actual": "USD 5.00",
+              "pass": false
+            },
+            {
+              "selector": "#eta",
+              "op": "equals",
+              "value": "3 business days",
+              "actual": "3 business days",
+              "pass": true
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#fee",
+              "op": "equals",
+              "value": "USD 11.00",
+              "actual": "USD 11.00",
+              "pass": true
+            },
+            {
+              "selector": "#eta",
+              "op": "equals",
+              "value": "3 business days",
+              "actual": "3 business days",
+              "pass": true
+            }
+          ]
+        }
+      },
+      "snapshot": {
+        "#fee": "USD 5.00",
+        "#eta": "3 business days",
+        "#status": "Estimate ready"
+      },
+      "hits": [
+        {
+          "method": "GET",
+          "route": "api/rates",
+          "mutated": true,
+          "bodySha256": "324d3d1fc439afff989cfa890108226160eb15b549c3bce5185fd5639c4292cb"
+        }
+      ],
+      "elapsedMs": 278,
+      "error": null
+    },
+    {
+      "fault": {
+        "id": "late-delivery",
+        "route": "api/rates",
+        "pointer": "/days",
+        "value": 30,
+        "witness": "#eta",
+        "why": "The delivery commitment changes from three to thirty days."
+      },
+      "before": "3 business days",
+      "after": "30 business days",
+      "suites": {
+        "smoke": {
+          "status": "survived",
+          "checks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Estimate ready",
+              "actual": "Estimate ready",
+              "pass": true
+            },
+            {
+              "selector": "#fee",
+              "op": "includes",
+              "value": "USD",
+              "actual": "USD 11.00",
+              "pass": true
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Estimate ready",
+              "actual": "Estimate ready",
+              "pass": true
+            },
+            {
+              "selector": "#fee",
+              "op": "includes",
+              "value": "USD",
+              "actual": "USD 11.00",
+              "pass": true
+            }
+          ]
+        },
+        "behavior": {
+          "status": "detected",
+          "checks": [
+            {
+              "selector": "#fee",
+              "op": "equals",
+              "value": "USD 11.00",
+              "actual": "USD 11.00",
+              "pass": true
+            },
+            {
+              "selector": "#eta",
+              "op": "equals",
+              "value": "3 business days",
+              "actual": "30 business days",
+              "pass": false
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#fee",
+              "op": "equals",
+              "value": "USD 11.00",
+              "actual": "USD 11.00",
+              "pass": true
+            },
+            {
+              "selector": "#eta",
+              "op": "equals",
+              "value": "3 business days",
+              "actual": "3 business days",
+              "pass": true
+            }
+          ]
+        }
+      },
+      "snapshot": {
+        "#fee": "USD 11.00",
+        "#eta": "30 business days",
+        "#status": "Estimate ready"
+      },
+      "hits": [
+        {
+          "method": "GET",
+          "route": "api/rates",
+          "mutated": true,
+          "bodySha256": "21b27e6497ae2a4360438ba6fa2abeb476288b52033c1c3eaab6755373010fbd"
+        }
+      ],
+      "elapsedMs": 281,
+      "error": null
+    }
+  ]
+}
