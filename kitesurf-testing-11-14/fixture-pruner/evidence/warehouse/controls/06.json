@@ -1,0 +1,12 @@
+{
+  "warehouse": {
+    "name": "East depot"
+  },
+  "products": [
+    {
+      "name": "Cable ties",
+      "stock": 5
+    },
+    {}
+  ]
+}

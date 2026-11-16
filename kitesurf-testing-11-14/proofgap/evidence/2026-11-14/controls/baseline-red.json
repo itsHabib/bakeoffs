@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "name": "Checkout: the wrong total still passes",
+  "createdAt": "2026-11-15T04:02:19.975Z",
+  "configSha256": "edf08562a7ded986486d84d712b7be465cfec55dd691cc64667c97f26646d2d4",
+  "endpoint": "ws://127.0.0.1:18893/devtools/browser",
+  "engine": {
+    "Browser": "Kitesurf/0.0.1",
+    "Protocol-Version": "1.3",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "V8-Version": "12.0.0",
+    "WebKit-Version": "537.36",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:18893/devtools/browser"
+  },
+  "engineRevision": "4a2903813a22b08d4f3cc64a4b35339d0293a5d1",
+  "revisionSource": "local checkout; not cryptographic runtime attestation",
+  "actions": "DOM click / input events via Runtime.evaluate",
+  "baseline": {
+    "snapshot": {
+      "#total": "USD 49.00"
+    },
+    "hits": [
+      {
+        "method": "GET",
+        "route": "api/quote",
+        "mutated": false,
+        "bodySha256": "8a789ef612ad43100eee00d0b6f905a64ac94b669fa712e27681cbb6dff4ac8a"
+      }
+    ],
+    "elapsedMs": 279,
+    "error": null
+  },
+  "summary": "INCOMPLETE — inspect execution errors. behavior: 0 of 0 observed faults missed",
+  "results": [
+    {
+      "fault": {
+        "id": "tenfold-total",
+        "route": "api/quote",
+        "pointer": "/totalCents",
+        "value": 49000,
+        "witness": "#total",
+        "why": "A cents conversion regression charges ten times the intended total."
+      },
+      "before": "USD 49.00",
+      "after": "USD 490.00",
+      "suites": {
+        "behavior": {
+          "status": "baseline-red",
+          "checks": [
+            {
+              "selector": "#total",
+              "op": "equals",
+              "value": "USD 1.00",
+              "actual": "USD 490.00",
+              "pass": false
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#total",
+              "op": "equals",
+              "value": "USD 1.00",
+              "actual": "USD 49.00",
+              "pass": false
+            }
+          ]
+        }
+      },
+      "snapshot": {
+        "#total": "USD 490.00"
+      },
+      "hits": [
+        {
+          "method": "GET",
+          "route": "api/quote",
+          "mutated": true,
+          "bodySha256": "6c7990c3d0d7c8ab804ddf92f718fcf9fde9c4f4c73a7bd64534f69e66015707"
+        }
+      ],
+      "elapsedMs": 326,
+      "error": null
+    }
+  ]
+}

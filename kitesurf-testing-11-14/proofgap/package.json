@@ -1,0 +1,20 @@
+{
+  "name": "proofgap",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/cli.mjs && node --check src/core.mjs && node --check src/browser.mjs && node --check src/server.mjs && node --check src/report.mjs && node --check scripts/verify-controls.mjs",
+    "demo": "./demo.sh"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsHabib/bakeoffs.git",
+    "directory": "kitesurf-testing-11-14/proofgap"
+  }
+}

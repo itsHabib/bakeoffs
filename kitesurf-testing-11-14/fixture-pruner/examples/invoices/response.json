@@ -1,0 +1,24 @@
+{
+  "requestId": "req-local-0042",
+  "generatedAt": "2026-11-14T12:00:00Z",
+  "debug": { "region": "local", "replica": "db-02", "timingMs": 31 },
+  "invoice": {
+    "id": "inv_1042",
+    "reference": "INV-1042",
+    "createdAt": "2026-10-01",
+    "customer": {
+      "id": "cus_22",
+      "name": "Northstar Studio",
+      "email": "accounts@example.test",
+      "billingAddress": { "line1": "100 Example Lane", "city": "Portland", "country": "US" },
+      "internalNotes": "Synthetic demo record; never a production capture."
+    },
+    "amountCents": 248000,
+    "currency": "USD",
+    "status": "overdue",
+    "canApprove": true,
+    "lineItems": [ { "description": "Design services", "amountCents": 248000 } ],
+    "audit": { "creator": "synthetic-user", "revision": 8, "history": ["draft", "sent", "overdue"] }
+  },
+  "links": { "self": "/api/invoices/1042", "pdf": "/api/invoices/1042.pdf" }
+}

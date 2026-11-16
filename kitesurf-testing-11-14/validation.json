@@ -1,0 +1,14 @@
+{
+  "verifiedAt": "2026-11-16T02:46:00.179682+00:00",
+  "command": "KITESURF_SOURCE=<built-checkout> ./demo.sh",
+  "environment": "macOS, Node 26.5.1, local Kitesurf",
+  "engineRevision": "4a2903813a22b08d4f3cc64a4b35339d0293a5d1",
+  "exitCode": 0,
+  "testsPassed": 33,
+  "browserWorkloadsPassed": 6,
+  "executableInputsSha256": "609b271701319faba4cc0d677d24355ce28a878051e0301321f38769b283c9b3",
+  "hashFormat": "Sorted relative file path, NUL, raw bytes, NUL; SHA-256. Includes mjs/sh, package manifests/lock, examples and workloads.",
+  "executableInputFiles": 51,
+  "finalInputsMatchTestedExport": true,
+  "secretScan": "Gitleaks: public repository history and publication files, zero findings"
+}

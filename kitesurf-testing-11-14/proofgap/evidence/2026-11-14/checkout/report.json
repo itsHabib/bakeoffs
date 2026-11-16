@@ -1,0 +1,421 @@
+{
+  "schemaVersion": 1,
+  "name": "Checkout: the wrong total still passes",
+  "createdAt": "2026-11-15T04:02:17.248Z",
+  "configSha256": "2ad505650ca0ae54ee18557265751536fb67b57cdd8123bebe062ef37eaed4ca",
+  "endpoint": "ws://127.0.0.1:18893/devtools/browser",
+  "engine": {
+    "Browser": "Kitesurf/0.0.1",
+    "Protocol-Version": "1.3",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "V8-Version": "12.0.0",
+    "WebKit-Version": "537.36",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:18893/devtools/browser"
+  },
+  "engineRevision": "4a2903813a22b08d4f3cc64a4b35339d0293a5d1",
+  "revisionSource": "local checkout; not cryptographic runtime attestation",
+  "actions": "DOM click / input events via Runtime.evaluate",
+  "baseline": {
+    "snapshot": {
+      "#total": "USD 49.00",
+      "#status": "Quote ready"
+    },
+    "hits": [
+      {
+        "method": "GET",
+        "route": "api/quote",
+        "mutated": false,
+        "bodySha256": "8a789ef612ad43100eee00d0b6f905a64ac94b669fa712e27681cbb6dff4ac8a"
+      }
+    ],
+    "elapsedMs": 345,
+    "error": null
+  },
+  "summary": "smoke: 2 of 2 observed faults missed · behavior: 0 of 2 observed faults missed",
+  "results": [
+    {
+      "fault": {
+        "id": "tenfold-total",
+        "route": "api/quote",
+        "pointer": "/totalCents",
+        "value": 49000,
+        "witness": "#total",
+        "why": "A cents conversion regression charges ten times the intended total."
+      },
+      "before": "USD 49.00",
+      "after": "USD 490.00",
+      "suites": {
+        "smoke": {
+          "status": "survived",
+          "checks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "exists",
+              "actual": "USD 490.00",
+              "pass": true
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "exists",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ]
+        },
+        "behavior": {
+          "status": "detected",
+          "checks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "equals",
+              "value": "USD 49.00",
+              "actual": "USD 490.00",
+              "pass": false
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "equals",
+              "value": "USD 49.00",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ]
+        }
+      },
+      "snapshot": {
+        "#total": "USD 490.00",
+        "#status": "Quote ready"
+      },
+      "hits": [
+        {
+          "method": "GET",
+          "route": "api/quote",
+          "mutated": true,
+          "bodySha256": "6c7990c3d0d7c8ab804ddf92f718fcf9fde9c4f4c73a7bd64534f69e66015707"
+        }
+      ],
+      "elapsedMs": 288,
+      "error": null
+    },
+    {
+      "fault": {
+        "id": "wrong-currency",
+        "route": "api/quote",
+        "pointer": "/currency",
+        "value": "EUR",
+        "witness": "#total",
+        "why": "The customer sees a quote in the wrong currency."
+      },
+      "before": "USD 49.00",
+      "after": "EUR 49.00",
+      "suites": {
+        "smoke": {
+          "status": "survived",
+          "checks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "exists",
+              "actual": "EUR 49.00",
+              "pass": true
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "exists",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ]
+        },
+        "behavior": {
+          "status": "detected",
+          "checks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "equals",
+              "value": "USD 49.00",
+              "actual": "EUR 49.00",
+              "pass": false
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "equals",
+              "value": "USD 49.00",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ]
+        }
+      },
+      "snapshot": {
+        "#total": "EUR 49.00",
+        "#status": "Quote ready"
+      },
+      "hits": [
+        {
+          "method": "GET",
+          "route": "api/quote",
+          "mutated": true,
+          "bodySha256": "3782998875b07487f2f71ec50d56006d1ff42f4c3c20caa9ba98ef79bed08a8d"
+        }
+      ],
+      "elapsedMs": 299,
+      "error": null
+    },
+    {
+      "fault": {
+        "id": "unused-metadata",
+        "route": "api/quote",
+        "pointer": "/trace",
+        "value": "mutated",
+        "witness": "#total",
+        "why": "Negative control: changing internal metadata does not change the total."
+      },
+      "before": "USD 49.00",
+      "after": "USD 49.00",
+      "suites": {
+        "smoke": {
+          "status": "no-observed-change",
+          "checks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "exists",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "exists",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ]
+        },
+        "behavior": {
+          "status": "no-observed-change",
+          "checks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "equals",
+              "value": "USD 49.00",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "equals",
+              "value": "USD 49.00",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ]
+        }
+      },
+      "snapshot": {
+        "#total": "USD 49.00",
+        "#status": "Quote ready"
+      },
+      "hits": [
+        {
+          "method": "GET",
+          "route": "api/quote",
+          "mutated": true,
+          "bodySha256": "196e2250d6f09e2cf33829bcf239a38c6850594ec996e05465e749f07dc62120"
+        }
+      ],
+      "elapsedMs": 315,
+      "error": null
+    },
+    {
+      "fault": {
+        "id": "unvisited-discount",
+        "route": "api/discount",
+        "pointer": "/percent",
+        "value": 99,
+        "witness": "#total",
+        "why": "Negative control: this journey never requests the discount endpoint."
+      },
+      "before": "USD 49.00",
+      "after": "USD 49.00",
+      "suites": {
+        "smoke": {
+          "status": "not-exercised",
+          "checks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "exists",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "exists",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ]
+        },
+        "behavior": {
+          "status": "not-exercised",
+          "checks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "equals",
+              "value": "USD 49.00",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ],
+          "baselineChecks": [
+            {
+              "selector": "#status",
+              "op": "equals",
+              "value": "Quote ready",
+              "actual": "Quote ready",
+              "pass": true
+            },
+            {
+              "selector": "#total",
+              "op": "equals",
+              "value": "USD 49.00",
+              "actual": "USD 49.00",
+              "pass": true
+            }
+          ]
+        }
+      },
+      "snapshot": {
+        "#total": "USD 49.00",
+        "#status": "Quote ready"
+      },
+      "hits": [
+        {
+          "method": "GET",
+          "route": "api/quote",
+          "mutated": false,
+          "bodySha256": "8a789ef612ad43100eee00d0b6f905a64ac94b669fa712e27681cbb6dff4ac8a"
+        }
+      ],
+      "elapsedMs": 264,
+      "error": null
+    }
+  ]
+}

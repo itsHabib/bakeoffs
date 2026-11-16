@@ -1,0 +1,50 @@
+{
+  "name": "Search results regress after typing",
+  "url": "http://127.0.0.1:8892/search",
+  "oracle": {
+    "actual": {
+      "selector": "#result",
+      "attribute": "data-query"
+    },
+    "expected": {
+      "selector": "#query",
+      "property": "value"
+    }
+  },
+  "events": [
+    {
+      "id": "older-request",
+      "kind": "fill",
+      "selector": "#query",
+      "value": "ca"
+    },
+    {
+      "id": "current-request",
+      "kind": "fill",
+      "selector": "#query",
+      "value": "cats"
+    },
+    {
+      "id": "current-response",
+      "kind": "respond",
+      "url": "/api/search?q=cats",
+      "body": {
+        "label": "Matches for cats"
+      },
+      "requires": [
+        "current-request"
+      ]
+    },
+    {
+      "id": "stale-response",
+      "kind": "respond",
+      "url": "/api/search?q=ca",
+      "body": {
+        "label": "Matches for ca"
+      },
+      "requires": [
+        "older-request"
+      ]
+    }
+  ]
+}

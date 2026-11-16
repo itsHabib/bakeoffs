@@ -1,0 +1,11 @@
+{
+  "invoice": {
+    "customer": {
+      "name": "Northstar Studio"
+    },
+    "amountCents": 248000,
+    "currency": "USD",
+    "status": "overdue",
+    "canApprove": true
+  }
+}

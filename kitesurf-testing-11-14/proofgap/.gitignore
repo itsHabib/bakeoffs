@@ -1,0 +1,11 @@
+node_modules/
+artifacts/*
+!artifacts/.gitkeep
+
+.env
+.env.*
+*.pem
+*.key
+credentials*
+secrets/
+coverage/

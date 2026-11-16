@@ -1,0 +1,12 @@
+{
+  "warehouse": {
+    "name": "East depot"
+  },
+  "products": [
+    {
+      "stock": 5,
+      "target": 30
+    },
+    {}
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "name": "Search results regress after typing",
+  "url": "http://127.0.0.1:8892/search",
+  "oracle": {
+    "actual": {
+      "selector": "#result",
+      "attribute": "data-query"
+    },
+    "expected": {
+      "selector": "#query",
+      "property": "value"
+    }
+  },
+  "events": [
+    {
+      "id": "open-help",
+      "kind": "click",
+      "selector": "#theme"
+    },
+    {
+      "id": "warmup-input",
+      "kind": "fill",
+      "selector": "#query",
+      "value": "1"
+    },
+    {
+      "id": "warmup-result",
+      "kind": "respond",
+      "url": "/api/search?q=1",
+      "body": {
+        "label": "Matches for 1"
+      },
+      "requires": [
+        "warmup-input"
+      ]
+    },
+    {
+      "id": "toggle-view",
+      "kind": "click",
+      "selector": "#theme"
+    },
+    {
+      "id": "older-request",
+      "kind": "fill",
+      "selector": "#query",
+      "value": "ca"
+    },
+    {
+      "id": "help-again",
+      "kind": "click",
+      "selector": "#theme"
+    },
+    {
+      "id": "current-request",
+      "kind": "fill",
+      "selector": "#query",
+      "value": "cats"
+    },
+    {
+      "id": "current-response",
+      "kind": "respond",
+      "url": "/api/search?q=cats",
+      "body": {
+        "label": "Matches for cats"
+      },
+      "requires": [
+        "current-request"
+      ]
+    },
+    {
+      "id": "toggle-after-result",
+      "kind": "click",
+      "selector": "#theme"
+    },
+    {
+      "id": "stale-response",
+      "kind": "respond",
+      "url": "/api/search?q=ca",
+      "body": {
+        "label": "Matches for ca"
+      },
+      "requires": [
+        "older-request"
+      ]
+    },
+    {
+      "id": "final-help",
+      "kind": "click",
+      "selector": "#theme"
+    }
+  ]
+}

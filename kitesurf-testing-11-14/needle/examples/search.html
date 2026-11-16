@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Needle · Search race</title>
+<style>body{font:18px system-ui;max-width:760px;margin:70px auto;padding:0 25px;color:#17332c;background:#f4f7f2}h1{font-size:46px;letter-spacing:-2px}label{display:block;margin-top:25px}input,button{font:inherit;padding:12px;border:1px solid #aac0b4;border-radius:7px}button{cursor:pointer;background:#e3eee6}article{padding:25px;border:1px solid #aac0b4;border-radius:12px;margin-top:28px;background:white}small{color:#526b60}.tag{font:13px monospace;color:#467867}#result{min-height:48px}</style>
+<p class="tag">NEEDLE / REPRODUCTION WORKLOAD 01</p><h1>Search that goes backwards.</h1><p>A late response overwrites the newest search. Needle finds the four events that make it happen.</p>
+<label for="query">Search the inventory</label><input id="query" value=""><button id="theme">Toggle compact view</button>
+<article><small>Results</small><div id="result" data-query="">Type a search to begin.</div></article><p id="mode"></p>
+<script>
+const fixed = location.search.includes('fixed=1');
+document.querySelector('#mode').textContent = fixed ? 'Fixed control: stale responses ignored.' : 'Broken control: last response wins.';
+document.querySelector('#theme').addEventListener('click', () => document.body.classList.toggle('compact'));
+let generation = 0;
+document.querySelector('#query').addEventListener('input', async event => {
+  const query = event.target.value;
+  const requestGeneration = ++generation;
+  const data = await fetch('/api/search?q=' + encodeURIComponent(query)).then(response => response.json());
+  if (fixed && requestGeneration !== generation) return;
+  const result = document.querySelector('#result');
+  result.textContent = data.label;
+  result.setAttribute('data-query', query);
+});
+</script></html>

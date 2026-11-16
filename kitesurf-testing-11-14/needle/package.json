@@ -1,0 +1,20 @@
+{
+  "name": "needle-repro",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/cli.mjs && node --check src/browser.mjs && node --check src/reduce.mjs",
+    "demo": "bash demo.sh"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsHabib/bakeoffs.git",
+    "directory": "kitesurf-testing-11-14/needle"
+  }
+}

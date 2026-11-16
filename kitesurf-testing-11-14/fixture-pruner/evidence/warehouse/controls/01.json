@@ -1,0 +1,10 @@
+{
+  "products": [
+    {
+      "name": "Cable ties",
+      "stock": 5,
+      "target": 30
+    },
+    {}
+  ]
+}

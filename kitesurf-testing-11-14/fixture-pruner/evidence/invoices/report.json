@@ -1,0 +1,4855 @@
+{
+  "name": "Invoice approval · overdue customer",
+  "timestamp": "2026-11-15T04:00:58.204Z",
+  "engine": {
+    "Browser": "Kitesurf/0.0.1",
+    "Protocol-Version": "1.3",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "V8-Version": "12.0.0",
+    "WebKit-Version": "537.36",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:18891/devtools/browser"
+  },
+  "engineRevision": "4a2903813a22b08d4f3cc64a4b35339d0293a5d1",
+  "sourceSha256": "2969e7b9bf7348b8f2ccff470aa136bd5908ae75f847eae32b019ad5d61b1c57",
+  "contract": [
+    {
+      "selector": "#customer",
+      "text": "Northstar Studio"
+    },
+    {
+      "selector": "#total",
+      "text": "$2,480.00"
+    },
+    {
+      "selector": "#status",
+      "text": "Overdue · approval required"
+    },
+    {
+      "selector": "#approve",
+      "disabled": false
+    },
+    {
+      "selector": "#reference",
+      "text": "INV-1042"
+    }
+  ],
+  "checkCount": 5,
+  "beforeBytes": 735,
+  "afterBytes": 150,
+  "fixture": {
+    "invoice": {
+      "reference": "INV-1042",
+      "customer": {
+        "name": "Northstar Studio"
+      },
+      "amountCents": 248000,
+      "currency": "USD",
+      "status": "overdue",
+      "canApprove": true
+    }
+  },
+  "attempts": [
+    {
+      "path": "/requestId",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/generatedAt",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/debug",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "Loading invoice",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"Loading invoice\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/id",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "Loading invoice",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"Loading invoice\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/reference",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/createdAt",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "Loading invoice",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"Loading invoice\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/reference",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer/id",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "Loading invoice",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"Loading invoice\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/reference",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer/email",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "Loading invoice",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"Loading invoice\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/reference",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer/billingAddress",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "Loading invoice",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"Loading invoice\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/reference",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer/internalNotes",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "Loading invoice",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"Loading invoice\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/reference",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/amountCents",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$NaN",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"$NaN\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/currency",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "Unsupported currency",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"Unsupported currency\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/status",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "No action required",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"No action required\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/canApprove",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/lineItems",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "Loading invoice",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"Loading invoice\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/reference",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/amountCents",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$NaN",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"$NaN\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/currency",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "Unsupported currency",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"Unsupported currency\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/status",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "No action required",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"No action required\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/canApprove",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/audit",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "Loading invoice",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"Loading invoice\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/reference",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/amountCents",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$NaN",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"$NaN\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/currency",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "Unsupported currency",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"Unsupported currency\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/status",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "No action required",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"No action required\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/canApprove",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/links",
+      "accepted": true,
+      "pass": true,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "Loading invoice",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"Loading invoice\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/reference",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"\""
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/customer/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/amountCents",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$NaN",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"$NaN\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/currency",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "Unsupported currency",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"Unsupported currency\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/status",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "No action required",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"No action required\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "path": "/invoice/canApprove",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "complete": true,
+  "runs": 62,
+  "baseline": {
+    "pass": true,
+    "checks": [
+      {
+        "selector": "#customer",
+        "text": "Northstar Studio",
+        "actual": {
+          "count": 1,
+          "text": "Northstar Studio",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#total",
+        "text": "$2,480.00",
+        "actual": {
+          "count": 1,
+          "text": "$2,480.00",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#status",
+        "text": "Overdue · approval required",
+        "actual": {
+          "count": 1,
+          "text": "Overdue · approval required",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#approve",
+        "disabled": false,
+        "actual": {
+          "count": 1,
+          "text": "Approve payment plan",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#reference",
+        "text": "INV-1042",
+        "actual": {
+          "count": 1,
+          "text": "INV-1042",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      }
+    ],
+    "errors": []
+  },
+  "finalCheck": {
+    "pass": true,
+    "checks": [
+      {
+        "selector": "#customer",
+        "text": "Northstar Studio",
+        "actual": {
+          "count": 1,
+          "text": "Northstar Studio",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#total",
+        "text": "$2,480.00",
+        "actual": {
+          "count": 1,
+          "text": "$2,480.00",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#status",
+        "text": "Overdue · approval required",
+        "actual": {
+          "count": 1,
+          "text": "Overdue · approval required",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#approve",
+        "disabled": false,
+        "actual": {
+          "count": 1,
+          "text": "Approve payment plan",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      },
+      {
+        "selector": "#reference",
+        "text": "INV-1042",
+        "actual": {
+          "count": 1,
+          "text": "INV-1042",
+          "disabled": false
+        },
+        "pass": true,
+        "failures": []
+      }
+    ],
+    "errors": []
+  },
+  "controls": [
+    {
+      "path": "/invoice",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "Loading invoice",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"Loading invoice\""
+          ]
+        }
+      ],
+      "errors": [],
+      "file": "controls/01.json"
+    },
+    {
+      "path": "/invoice/reference",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"INV-1042\", got \"\""
+          ]
+        }
+      ],
+      "errors": [],
+      "file": "controls/02.json"
+    },
+    {
+      "path": "/invoice/customer",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": [],
+      "file": "controls/03.json"
+    },
+    {
+      "path": "/invoice/customer/name",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Northstar Studio\", got \"\""
+          ]
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": [],
+      "file": "controls/04.json"
+    },
+    {
+      "path": "/invoice/amountCents",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$NaN",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"$NaN\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": [],
+      "file": "controls/05.json"
+    },
+    {
+      "path": "/invoice/currency",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "Unsupported currency",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"$2,480.00\", got \"Unsupported currency\""
+          ]
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": [],
+      "file": "controls/06.json"
+    },
+    {
+      "path": "/invoice/status",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "No action required",
+            "disabled": false
+          },
+          "pass": false,
+          "failures": [
+            "Expected text \"Overdue · approval required\", got \"No action required\""
+          ]
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": [],
+      "file": "controls/07.json"
+    },
+    {
+      "path": "/invoice/canApprove",
+      "accepted": false,
+      "pass": false,
+      "checks": [
+        {
+          "selector": "#customer",
+          "text": "Northstar Studio",
+          "actual": {
+            "count": 1,
+            "text": "Northstar Studio",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#total",
+          "text": "$2,480.00",
+          "actual": {
+            "count": 1,
+            "text": "$2,480.00",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#status",
+          "text": "Overdue · approval required",
+          "actual": {
+            "count": 1,
+            "text": "Overdue · approval required",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        },
+        {
+          "selector": "#approve",
+          "disabled": false,
+          "actual": {
+            "count": 1,
+            "text": "Approve payment plan",
+            "disabled": true
+          },
+          "pass": false,
+          "failures": [
+            "Expected disabled=false, got true"
+          ]
+        },
+        {
+          "selector": "#reference",
+          "text": "INV-1042",
+          "actual": {
+            "count": 1,
+            "text": "INV-1042",
+            "disabled": false
+          },
+          "pass": true,
+          "failures": []
+        }
+      ],
+      "errors": [],
+      "file": "controls/08.json"
+    }
+  ]
+}
